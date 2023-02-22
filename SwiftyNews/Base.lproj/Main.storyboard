@@ -36,6 +36,19 @@
                                     <action selector="switchNewsType:" destination="BYZ-38-t0r" eventType="valueChanged" id="eiz-37-3dU"/>
                                 </connections>
                             </segmentedControl>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qB-xj-9i9">
+                                <rect key="frame" x="0.0" y="760" width="390" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="D5k-Hp-8VL"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Home" image="homekit" catalog="system" selectedImage="homekit" id="epj-ez-r7M"/>
+                                    <tabBarItem title="Search" image="magnifyingglass" catalog="system" id="vze-4V-18u"/>
+                                    <tabBarItem title="Notifications" image="bell" catalog="system" id="lGC-6F-fPK"/>
+                                    <tabBarItem title="Profile" image="person" catalog="system" id="459-7R-A75"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,10 +57,14 @@
                             <constraint firstItem="Por-Kc-9kK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DQS-Ik-FlJ"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GYr-4l-STv"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="20" id="Jyg-Us-Aaj"/>
+                            <constraint firstItem="0qB-xj-9i9" firstAttribute="leading" secondItem="dPe-LZ-AXc" secondAttribute="leading" id="MA9-1r-Fad"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OJy-FF-xvW"/>
+                            <constraint firstItem="0qB-xj-9i9" firstAttribute="trailing" secondItem="dPe-LZ-AXc" secondAttribute="trailing" id="hpI-rY-LSR"/>
+                            <constraint firstItem="0qB-xj-9i9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kn0-f8-ySx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="0qB-xj-9i9" id="dap-yE-NBA"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                     </connections>
                 </viewController>
@@ -57,6 +74,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
