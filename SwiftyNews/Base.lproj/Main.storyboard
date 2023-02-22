@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftyNews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Por-Kc-9kK">
-                                <rect key="frame" x="105.66666666666669" y="31" width="179" height="59"/>
+                                <rect key="frame" x="105.66666666666669" y="44" width="179" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="WOn-EA-RcQ"/>
                                 </constraints>
@@ -25,18 +25,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-LZ-AXc">
+                                <rect key="frame" x="0.0" y="123" width="390" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchNewsType:" destination="BYZ-38-t0r" eventType="valueChanged" id="eiz-37-3dU"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Por-Kc-9kK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A0d-5g-pBR"/>
-                            <constraint firstItem="Por-Kc-9kK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-13" id="DQS-Ik-FlJ"/>
+                            <constraint firstItem="Por-Kc-9kK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DQS-Ik-FlJ"/>
+                            <constraint firstItem="dPe-LZ-AXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GYr-4l-STv"/>
+                            <constraint firstItem="dPe-LZ-AXc" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="20" id="Jyg-Us-Aaj"/>
+                            <constraint firstItem="dPe-LZ-AXc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OJy-FF-xvW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="84.375"/>
+            <point key="canvasLocation" x="18.46153846153846" y="83.886255924170612"/>
         </scene>
     </scenes>
     <resources>
