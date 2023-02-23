@@ -10,13 +10,35 @@ import UIKit
 class HomeController: UIViewController {
     @IBOutlet var newsType: UISegmentedControl!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("View will appear")
+    }
+        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("View did appear")
+        
         
         newsType.setTitle("Local", forSegmentAt: 0)
         newsType.setTitle("US", forSegmentAt: 1)
         newsType.setTitle("World", forSegmentAt: 2)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        print("View will disappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        print("View did disappear")
+    }
+    
     
     @IBAction func switchNewsType(_ sender: Any) {
         print(newsType.selectedSegmentIndex)
