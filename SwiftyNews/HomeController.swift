@@ -24,11 +24,10 @@ class HomeController: UIViewController {
         super.viewDidAppear(animated)
         
         print("View did appear")
-        /*
         
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
-        self.newsType.setTitle("World", forSegmentAt: 2)*/
+        self.newsType.setTitle("World", forSegmentAt: 2)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,11 +63,6 @@ class HomeController: UIViewController {
         print("test1")
         let email = "test@gmail.com"
         let password = "test123"
-            
-
     }
     
-    
-    
 }
-

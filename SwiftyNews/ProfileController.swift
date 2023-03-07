@@ -20,35 +20,32 @@ class ProfileController: UIViewController {
     @IBOutlet var passwordLabel: UILabel!
     @IBOutlet var retypePasswordLabel: UILabel!
     
-    @IBOutlet var statusLogo: UILabel!
-    
     @IBOutlet var profileNameLabel: UILabel!
     @IBOutlet var profileEmailLabel: UILabel!
-    
     @IBOutlet var profileNameNameLabel: UILabel!
     @IBOutlet var profileEmailEmailLabel: UILabel!
+    @IBOutlet var logOutButton: UIButton!
     
+    @IBOutlet var statusLogo: UILabel!
     let auth = Auth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton]
         
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel]
-        
-        if let email = auth.currentUser?.email {
-            print(email)
+        if auth.currentUser != nil {
+            statusLogo.text = "Profile"
             
             for element in signUpElements {
                 element!.isHidden = true
             }
-            
+
             for element in profileElements {
                 element!.isHidden = false
             }
             
-            statusLogo.text = "Profile"
             profileNameNameLabel.text = auth.currentUser?.displayName
             profileEmailEmailLabel.text = auth.currentUser?.email
         } else {
@@ -81,17 +78,22 @@ class ProfileController: UIViewController {
                 
                 Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
                 
-                let changeRequest = auth.currentUser?.createProfileChangeRequest()
-                changeRequest?.displayName = nameLabel.text
-                changeRequest?.commitChanges { error in
-                  // ...
-                }
-
+                self.viewDidLoad()
+                self.viewWillAppear(true)
             }
-
         }
     }
     
 
-
+    @IBAction func logOut(_ sender: UIButton) {
+        do {
+            try auth.signOut()
+            print("HI")
+            self.viewDidLoad()
+            self.viewWillAppear(true)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
 }

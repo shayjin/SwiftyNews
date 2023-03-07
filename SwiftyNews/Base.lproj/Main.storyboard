@@ -292,6 +292,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Yn-ITk">
+                                <rect key="frame" x="154" y="305" width="85" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="zSA-di-Jmq" eventType="touchUpInside" id="fi6-g6-5rA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kd7-zT-rZM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -324,31 +333,19 @@
                             <constraint firstItem="Blt-fX-lJz" firstAttribute="leading" secondItem="kd7-zT-rZM" secondAttribute="leading" constant="25" id="tvd-Dl-vIl"/>
                             <constraint firstItem="Kjn-CW-sM4" firstAttribute="leading" secondItem="kd7-zT-rZM" secondAttribute="leading" constant="25" id="xEh-Ss-Wqy"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="e1y-Fw-9Ol"/>
-                                <exclude reference="Iqf-ZH-JPv"/>
-                                <exclude reference="05P-TQ-PMy"/>
-                                <exclude reference="WaN-cT-GyE"/>
-                                <exclude reference="3dN-pF-0ef"/>
-                                <exclude reference="M2c-tr-Xwh"/>
-                                <exclude reference="Blt-fX-lJz"/>
-                                <exclude reference="Kjn-CW-sM4"/>
-                                <exclude reference="vip-2h-XV6"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IJs-rO-Xtj"/>
                     <connections>
                         <outlet property="emailLabel" destination="Iqf-ZH-JPv" id="rx3-i1-h7Y"/>
                         <outlet property="emailTextField" destination="WaN-cT-GyE" id="181-yz-AC0"/>
+                        <outlet property="logOutButton" destination="l6c-Yn-ITk" id="mCX-q4-exJ"/>
                         <outlet property="nameLabel" destination="05P-TQ-PMy" id="5cz-Wj-TTb"/>
                         <outlet property="nameTextField" destination="3dN-pF-0ef" id="vZ4-8o-Hgb"/>
                         <outlet property="passwordLabel" destination="e1y-Fw-9Ol" id="nV7-vw-c6M"/>
                         <outlet property="passwordTextField" destination="M2c-tr-Xwh" id="CBR-wJ-myI"/>
                         <outlet property="profileEmailEmailLabel" destination="Da7-SW-nGP" id="og0-mU-GBo"/>
-                        <outlet property="profileEmailLabel" destination="Da7-SW-nGP" id="ZdJ-pF-sKb"/>
-                        <outlet property="profileNameLabel" destination="hHP-qg-3g0" id="zwM-WX-hqz"/>
+                        <outlet property="profileEmailLabel" destination="CbJ-um-HRe" id="dE8-MV-4WD"/>
+                        <outlet property="profileNameLabel" destination="Elb-AU-bxs" id="Qrj-te-oPL"/>
                         <outlet property="profileNameNameLabel" destination="hHP-qg-3g0" id="OAw-np-4eR"/>
                         <outlet property="retypePasswordLabel" destination="vip-2h-XV6" id="8pS-XX-U66"/>
                         <outlet property="retypePasswordTextField" destination="Blt-fX-lJz" id="hwd-7G-VR9"/>
