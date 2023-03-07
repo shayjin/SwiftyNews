@@ -15,18 +15,27 @@ class ProfileController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var retypePasswordTextField: UITextField!
     @IBOutlet var signUpButton: UIButton!
-    @IBOutlet var signUpLogo: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var passwordLabel: UILabel!
     @IBOutlet var retypePasswordLabel: UILabel!
+    
+    @IBOutlet var statusLogo: UILabel!
+    
+    @IBOutlet var profileNameLabel: UILabel!
+    @IBOutlet var profileEmailLabel: UILabel!
+    
+    @IBOutlet var profileNameNameLabel: UILabel!
+    @IBOutlet var profileEmailEmailLabel: UILabel!
     
     let auth = Auth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogo, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
+        let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
+        
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel]
         
         if let email = auth.currentUser?.email {
             print(email)
@@ -34,8 +43,24 @@ class ProfileController: UIViewController {
             for element in signUpElements {
                 element!.isHidden = true
             }
-        } else {
             
+            for element in profileElements {
+                element!.isHidden = false
+            }
+            
+            statusLogo.text = "Profile"
+            profileNameNameLabel.text = auth.currentUser?.displayName
+            profileEmailEmailLabel.text = auth.currentUser?.email
+        } else {
+            statusLogo.text = "Log In"
+            
+            for element in signUpElements {
+                element!.isHidden = false
+            }
+            
+            for element in profileElements {
+                element!.isHidden = true
+            }
         }
     }
     
@@ -55,8 +80,12 @@ class ProfileController: UIViewController {
                 }
                 
                 Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
-                print(Auth.auth().currentUser?.email)
-                print("Test user created successfully")
+                
+                let changeRequest = auth.currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = nameLabel.text
+                changeRequest?.commitChanges { error in
+                  // ...
+                }
 
             }
 
