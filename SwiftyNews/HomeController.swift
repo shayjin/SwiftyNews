@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeController: UIViewController {
     @IBOutlet var newsType: UISegmentedControl!
+    @IBOutlet var testButton: UIButton!
+    
+    let auth = Auth.auth()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,11 +24,11 @@ class HomeController: UIViewController {
         super.viewDidAppear(animated)
         
         print("View did appear")
+        /*
         
-        
-        newsType.setTitle("Local", forSegmentAt: 0)
-        newsType.setTitle("US", forSegmentAt: 1)
-        newsType.setTitle("World", forSegmentAt: 2)
+        self.newsType.setTitle("Local", forSegmentAt: 0)
+        self.newsType.setTitle("US", forSegmentAt: 1)
+        self.newsType.setTitle("World", forSegmentAt: 2)*/
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +57,15 @@ class HomeController: UIViewController {
         default:
             print("Default")
         }
+    }
+    
+    
+    @IBAction func testPressed(_ sender: Any) {
+        print("test1")
+        let email = "test@gmail.com"
+        let password = "test123"
+            
+
     }
     
     

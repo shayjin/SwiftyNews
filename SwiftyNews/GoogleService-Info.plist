@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>691293296858-b0jeaf26dnea6um2nbkg1dobvjj1d0l3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.691293296858-b0jeaf26dnea6um2nbkg1dobvjj1d0l3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmpaYbNa3iy0RJzqEKIDlgFXdQrIdz5sU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>691293296858</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cse5236.SwiftyNews</string>
+	<key>PROJECT_ID</key>
+	<string>swiftynews-ddd90</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiftynews-ddd90.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:691293296858:ios:90d45aa2d699946e8fade3</string>
+</dict>
+</plist>

@@ -1,0 +1,6 @@
+framework module Pods_SwiftyNewsTests {
+  umbrella header "Pods-SwiftyNewsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
