@@ -299,10 +299,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="IJs-rO-Xtj"/>
                     <connections>
+                        <outlet property="emailLabel" destination="Iqf-ZH-JPv" id="rx3-i1-h7Y"/>
                         <outlet property="emailTextField" destination="WaN-cT-GyE" id="181-yz-AC0"/>
+                        <outlet property="nameLabel" destination="05P-TQ-PMy" id="5cz-Wj-TTb"/>
                         <outlet property="nameTextField" destination="3dN-pF-0ef" id="vZ4-8o-Hgb"/>
+                        <outlet property="passwordLabel" destination="e1y-Fw-9Ol" id="nV7-vw-c6M"/>
                         <outlet property="passwordTextField" destination="M2c-tr-Xwh" id="CBR-wJ-myI"/>
+                        <outlet property="retypePasswordLabel" destination="vip-2h-XV6" id="8pS-XX-U66"/>
                         <outlet property="retypePasswordTextField" destination="Blt-fX-lJz" id="hwd-7G-VR9"/>
+                        <outlet property="signUpButton" destination="Kjn-CW-sM4" id="lEx-CD-fO6"/>
+                        <outlet property="signUpLogo" destination="jzn-MJ-I9a" id="bwY-Bf-nPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcb-Xp-F06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
