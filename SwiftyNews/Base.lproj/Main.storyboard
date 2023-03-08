@@ -290,6 +290,9 @@
                                 <rect key="frame" x="25" y="333" width="340" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
+                                <connections>
+                                    <action selector="login:" destination="zSA-di-Jmq" eventType="touchUpInside" id="35V-AQ-rfr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-bQ-Y93">
                                 <rect key="frame" x="25" y="391" width="150" height="36"/>

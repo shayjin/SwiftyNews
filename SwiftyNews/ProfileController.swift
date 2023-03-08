@@ -44,10 +44,6 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
-        
-        let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton]
         
         if auth.currentUser != nil {
             statusLogo.text = "Profile"
@@ -141,15 +137,30 @@ class ProfileController: UIViewController {
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
                     
-                    var email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
+                    let email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
                     
                     database.child("User").child(email).setValue(nameTextField!.text!)
                     
+                    auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+                    
                     self.viewDidLoad()
-                    self.viewWillAppear(true)
                 }
+            }
+        }
+    }
+    
+
+
+    @IBAction func login(_ sender: Any) {
+        Auth.auth().signIn(withEmail: loginUsernameTextField.text!, password: loginPasswordTextField.text!) { [weak self] authResult, error in
+            if (self!.auth.currentUser == nil) {
+                let alertController = UIAlertController(title: "Invalid Credentials", message: "Error logging in: \(error!.localizedDescription)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Continue", style: .default, handler: nil)
+                alertController.addAction(action)
+                self!.present(alertController, animated: true, completion: nil)
+            } else {
+                self!.viewDidLoad()
             }
         }
     }
