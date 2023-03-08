@@ -10,12 +10,22 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ProfileController: UIViewController {
-
+    
+    
+    @IBOutlet var loginUsernameLabel: UILabel!
+    @IBOutlet var loginUsernameTextField: UITextField!
+    @IBOutlet var loginPasswordLabel: UILabel!
+    @IBOutlet var loginPasswordTextField: UITextField!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var createAccountButton: UIButton!
+    @IBOutlet var forgotPasswordButtonn: UIButton!
+    
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var retypePasswordTextField: UITextField!
     @IBOutlet var signUpButton: UIButton!
+    @IBOutlet var signUpLogInButton: UIButton!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var passwordLabel: UILabel!
@@ -34,19 +44,15 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
+        
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
         let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton]
         
         if auth.currentUser != nil {
             statusLogo.text = "Profile"
             
-            for element in signUpElements {
-                element!.isHidden = true
-            }
-
-            for element in profileElements {
-                element!.isHidden = false
-            }
+            enable(page: "profile")
             
             database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).getData(completion:  { [self] error, snapshot in
                 guard error == nil else {
@@ -61,6 +67,33 @@ class ProfileController: UIViewController {
         } else {
             statusLogo.text = "Log In"
             
+            enable(page: "login")
+        }
+    }
+    
+    func enable(page: String) {
+        let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
+        
+        let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton]
+        
+        if (page == "login") {
+            for element in loginElements {
+                element!.isHidden = false
+            }
+            
+            for element in signUpElements {
+                element!.isHidden = true
+            }
+            
+            for element in profileElements {
+                element!.isHidden = true
+            }
+        } else if (page == "signup") {
+            for element in loginElements {
+                element!.isHidden = true
+            }
+            
             for element in signUpElements {
                 element!.isHidden = false
             }
@@ -68,8 +101,31 @@ class ProfileController: UIViewController {
             for element in profileElements {
                 element!.isHidden = true
             }
+        } else if (page == "profile") {
+            for element in loginElements {
+                element!.isHidden = true
+            }
+            
+            for element in signUpElements {
+                element!.isHidden = true
+            }
+            
+            for element in profileElements {
+                element!.isHidden = false
+            }
         }
     }
+    
+
+    
+    @IBAction func goToSignUpPage(_ sender: UIButton) {
+        enable(page: "signup")
+    }
+    
+    @IBAction func goToLogInPage(_ sender: UIButton) {
+        enable(page: "login")
+    }
+    
     
     @IBAction func signUp(_ sender: UIButton) {
         if (passwordTextField.text != retypePasswordTextField.text) {
@@ -84,21 +140,20 @@ class ProfileController: UIViewController {
                     let action = UIAlertAction(title: "Continue", style: .default, handler: nil)
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
+                } else {
+                    auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+                    
+                    var email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
+                    
+                    database.child("User").child(email).setValue(nameTextField!.text!)
+                    
+                    self.viewDidLoad()
+                    self.viewWillAppear(true)
                 }
-                
-                auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
-                
-                var email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
-                
-                database.child("User").child(email).setValue(nameTextField!.text!)
-                
-                self.viewDidLoad()
-                self.viewWillAppear(true)
             }
         }
     }
     
-
     @IBAction func logOut(_ sender: UIButton) {
         do {
             try auth.signOut()
@@ -109,5 +164,4 @@ class ProfileController: UIViewController {
             print("Error signing out: %@", signOutError)
         }
     }
-    
 }
