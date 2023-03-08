@@ -7,12 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class HomeController: UIViewController {
     @IBOutlet var newsType: UISegmentedControl!
     @IBOutlet var testButton: UIButton!
     
     let auth = Auth.auth()
+    let database = Database.database().reference()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,8 +63,7 @@ class HomeController: UIViewController {
     
     @IBAction func testPressed(_ sender: Any) {
         print("test1")
-        let email = "test@gmail.com"
-        let password = "test123"
+        database.child("test").child("ella22").setValue("hi")
     }
     
 }

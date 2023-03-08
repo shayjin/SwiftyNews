@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileController: UIViewController {
 
@@ -28,6 +29,7 @@ class ProfileController: UIViewController {
     
     @IBOutlet var statusLogo: UILabel!
     let auth = Auth.auth()
+    let database = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,15 @@ class ProfileController: UIViewController {
                 element!.isHidden = false
             }
             
-            profileNameNameLabel.text = auth.currentUser?.displayName
+            database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).getData(completion:  { [self] error, snapshot in
+                guard error == nil else {
+                  print(error!.localizedDescription)
+                  return;
+                }
+                let userName = snapshot?.value as? String ?? "Unknown"
+                profileNameNameLabel.text = userName
+              })
+            
             profileEmailEmailLabel.text = auth.currentUser?.email
         } else {
             statusLogo.text = "Log In"
@@ -76,7 +86,11 @@ class ProfileController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
                 
-                Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+                auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+                
+                var email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
+                
+                database.child("User").child(email).setValue(nameTextField!.text!)
                 
                 self.viewDidLoad()
                 self.viewWillAppear(true)

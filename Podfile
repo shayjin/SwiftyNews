@@ -8,6 +8,8 @@ target 'SwiftyNews' do
   # Pods for SwiftyNews
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase'
+pod 'FirebaseDatabase'
 
   target 'SwiftyNewsTests' do
     inherit! :search_paths
