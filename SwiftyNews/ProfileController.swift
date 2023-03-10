@@ -36,6 +36,7 @@ class ProfileController: UIViewController {
     @IBOutlet var profileNameNameLabel: UILabel!
     @IBOutlet var profileEmailEmailLabel: UILabel!
     @IBOutlet var logOutButton: UIButton!
+    @IBOutlet var editProfileButton: UIButton!
     
     @IBOutlet var statusLogo: UILabel!
     let auth = Auth.auth()
@@ -71,7 +72,7 @@ class ProfileController: UIViewController {
         let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
         
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton]
         
         if (page == "login") {
             for element in loginElements {
@@ -175,4 +176,9 @@ class ProfileController: UIViewController {
             print("Error signing out: %@", signOutError)
         }
     }
+    
+    @IBAction func editProfile(_ sender: Any) {
+        
+    }
+    
 }

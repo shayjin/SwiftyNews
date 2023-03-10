@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		514393802CB98C1EB82E9879 /* Pods_SwiftyNews_SwiftyNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81885B885513BA8C0E3E630 /* Pods_SwiftyNews_SwiftyNewsUITests.framework */; };
 		71CCB62C8B39CBD2711B3809 /* Pods_SwiftyNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECB2FCC26520C57A13798FAD /* Pods_SwiftyNewsTests.framework */; };
+		FE3014E129BBEE9F009A95A4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3014E029BBEE9F009A95A4 /* EditProfileViewController.swift */; };
 		FE8753CF29A684AA00992492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753CE29A684AA00992492 /* AppDelegate.swift */; };
 		FE8753D129A684AA00992492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753D029A684AA00992492 /* SceneDelegate.swift */; };
 		FE8753D329A684AA00992492 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753D229A684AA00992492 /* HomeController.swift */; };
@@ -50,6 +51,7 @@
 		ECB2FCC26520C57A13798FAD /* Pods_SwiftyNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8CB80A80B0C0A5580979EA /* Pods_SwiftyNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD6B73218F14EB6996554F4 /* Pods-SwiftyNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyNewsTests/Pods-SwiftyNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE3014E029BBEE9F009A95A4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		FE8753CB29A684AA00992492 /* SwiftyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8753CE29A684AA00992492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE8753D029A684AA00992492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				FE8753D229A684AA00992492 /* HomeController.swift */,
 				FEF6F56B29B7E5530037DE36 /* ProfileController.swift */,
 				FE8753D429A684AA00992492 /* Main.storyboard */,
+				FE3014E029BBEE9F009A95A4 /* EditProfileViewController.swift */,
 				FE8753D729A684BC00992492 /* Assets.xcassets */,
 				FE8753D929A684BC00992492 /* LaunchScreen.storyboard */,
 				FEF6F56929B7DD980037DE36 /* GoogleService-Info.plist */,
@@ -419,6 +422,7 @@
 				FEF6F56C29B7E5530037DE36 /* ProfileController.swift in Sources */,
 				FE8753D329A684AA00992492 /* HomeController.swift in Sources */,
 				FE8753CF29A684AA00992492 /* AppDelegate.swift in Sources */,
+				FE3014E129BBEE9F009A95A4 /* EditProfileViewController.swift in Sources */,
 				FE8753D129A684AA00992492 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
