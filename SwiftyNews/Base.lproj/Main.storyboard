@@ -183,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="lya-zD-WH7">
-                                <rect key="frame" x="86" y="-301" width="390" height="844"/>
+                                <rect key="frame" x="85" y="-301" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <viewLayoutGuide key="safeArea" id="SKo-Yg-utc"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -307,7 +307,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="390.33333333333331" width="152" height="35"/>
+                                <rect key="frame" x="215" y="336" width="152" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -499,7 +499,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                 <connections>
-                                    <action selector="signUp:" destination="zSA-di-Jmq" eventType="touchUpInside" id="HN3-6f-8CK"/>
+                                    <action selector="updateProfile:" destination="eZP-Pa-ifT" eventType="touchUpInside" id="9sA-up-MCZ"/>
+                                    <segue destination="zSA-di-Jmq" kind="show" id="Xlc-QL-Z5L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -514,11 +515,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ms4-CQ-hSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="1339"/>
+            <point key="canvasLocation" x="1030.7692307692307" y="1338.6255924170616"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="amc-9R-CbH"/>
+        <segue reference="a3V-2k-cKG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" catalog="system" width="125" height="128"/>
