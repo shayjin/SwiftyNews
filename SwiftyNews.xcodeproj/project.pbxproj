@@ -12,7 +12,7 @@
 		FE3014E129BBEE9F009A95A4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3014E029BBEE9F009A95A4 /* EditProfileViewController.swift */; };
 		FE8753CF29A684AA00992492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753CE29A684AA00992492 /* AppDelegate.swift */; };
 		FE8753D129A684AA00992492 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753D029A684AA00992492 /* SceneDelegate.swift */; };
-		FE8753D329A684AA00992492 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753D229A684AA00992492 /* HomeController.swift */; };
+		FE8753D329A684AA00992492 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753D229A684AA00992492 /* HomeViewController.swift */; };
 		FE8753D629A684AA00992492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8753D429A684AA00992492 /* Main.storyboard */; };
 		FE8753D829A684BC00992492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8753D729A684BC00992492 /* Assets.xcassets */; };
 		FE8753DB29A684BC00992492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8753D929A684BC00992492 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		FE8753F229A684BD00992492 /* SwiftyNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8753F129A684BD00992492 /* SwiftyNewsUITestsLaunchTests.swift */; };
 		FE8BCD51E34991FBD2EE6B15 /* Pods_SwiftyNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8CB80A80B0C0A5580979EA /* Pods_SwiftyNews.framework */; };
 		FEF6F56A29B7DD980037DE36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEF6F56929B7DD980037DE36 /* GoogleService-Info.plist */; };
-		FEF6F56C29B7E5530037DE36 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF6F56B29B7E5530037DE36 /* ProfileController.swift */; };
+		FEF6F56C29B7E5530037DE36 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF6F56B29B7E5530037DE36 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		FE8753CB29A684AA00992492 /* SwiftyNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8753CE29A684AA00992492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE8753D029A684AA00992492 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE8753D229A684AA00992492 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FE8753D229A684AA00992492 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FE8753D529A684AA00992492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE8753D729A684BC00992492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE8753DA29A684BC00992492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		FE8753EF29A684BD00992492 /* SwiftyNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyNewsUITests.swift; sourceTree = "<group>"; };
 		FE8753F129A684BD00992492 /* SwiftyNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEF6F56929B7DD980037DE36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FEF6F56B29B7E5530037DE36 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FEF6F56B29B7E5530037DE36 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,8 @@
 			children = (
 				FE8753CE29A684AA00992492 /* AppDelegate.swift */,
 				FE8753D029A684AA00992492 /* SceneDelegate.swift */,
-				FE8753D229A684AA00992492 /* HomeController.swift */,
-				FEF6F56B29B7E5530037DE36 /* ProfileController.swift */,
+				FE8753D229A684AA00992492 /* HomeViewController.swift */,
+				FEF6F56B29B7E5530037DE36 /* ProfileViewController.swift */,
 				FE8753D429A684AA00992492 /* Main.storyboard */,
 				FE3014E029BBEE9F009A95A4 /* EditProfileViewController.swift */,
 				FE8753D729A684BC00992492 /* Assets.xcassets */,
@@ -419,8 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF6F56C29B7E5530037DE36 /* ProfileController.swift in Sources */,
-				FE8753D329A684AA00992492 /* HomeController.swift in Sources */,
+				FEF6F56C29B7E5530037DE36 /* ProfileViewController.swift in Sources */,
+				FE8753D329A684AA00992492 /* HomeViewController.swift in Sources */,
 				FE8753CF29A684AA00992492 /* AppDelegate.swift in Sources */,
 				FE3014E129BBEE9F009A95A4 /* EditProfileViewController.swift in Sources */,
 				FE8753D129A684AA00992492 /* SceneDelegate.swift in Sources */,

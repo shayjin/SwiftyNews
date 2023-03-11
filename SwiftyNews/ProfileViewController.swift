@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class ProfileController: UIViewController {
+class ProfileViewController: UIViewController {
     
     
     @IBOutlet var loginUsernameLabel: UILabel!

@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class HomeController: UIViewController {
+class HomeViewController: UIViewController {
     @IBOutlet var newsType: UISegmentedControl!
     @IBOutlet var testButton: UIButton!
     
