@@ -45,7 +45,7 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.navigationItem.hidesBackButton = true
         if auth.currentUser != nil {
             statusLogo.text = "Profile"
             
@@ -116,6 +116,10 @@ class ProfileController: UIViewController {
 
     
     @IBAction func goToSignUpPage(_ sender: UIButton) {
+        emailTextField.text = ""
+        nameTextField.text = ""
+        passwordTextField.text = ""
+        retypePasswordTextField.text = ""
         enable(page: "signup")
     }
     
@@ -125,11 +129,13 @@ class ProfileController: UIViewController {
     
     
     @IBAction func signUp(_ sender: UIButton) {
+        
         if (passwordTextField.text != retypePasswordTextField.text) {
             let alertController = UIAlertController(title: "Unmatched Password", message: "Passwords are not matched!", preferredStyle: .alert)
             let action = UIAlertAction(title: "Continue", style: .default, handler: nil)
             alertController.addAction(action)
             self.present(alertController, animated: true, completion: nil)
+            
         } else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [self] authResult, error in
                 if let error = error {

@@ -70,6 +70,8 @@ class EditProfileViewController: UIViewController {
         
         
         database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).setValue(nameTextField.text)
+        
+        
     }
     
 }
