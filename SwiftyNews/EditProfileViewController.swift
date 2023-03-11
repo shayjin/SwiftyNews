@@ -39,8 +39,18 @@ class EditProfileViewController: UIViewController {
         var email = auth.currentUser?.email?.replacingOccurrences(of: ".", with: ",")
         
         if (emailTextField.text != auth.currentUser?.email) {
-            database.child("User").child(email!).removeValue()
-            database.child("User").child(emailTextField.text!).setValue(nameTextField.text)
+            database.child("User").child(email!).getData(completion: {
+                [self] error, snapshot in
+                    guard error == nil else {
+                      print(error!.localizedDescription)
+                      return;
+                }
+                snapshot!.ref.removeValue()
+            })
+                                                         
+            database.child("User").child(emailTextField.text!.replacingOccurrences(of: ".", with: ",")).setValue(nameTextField.text)
+            
+            auth.currentUser?.updateEmail(to: emailTextField.text!)
         } else {
             database.child("User").child(email!).getData(completion:  { [self] error, snapshot in
                 guard error == nil else {
