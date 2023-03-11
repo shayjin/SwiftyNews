@@ -31,11 +31,34 @@ class EditProfileViewController: UIViewController {
             }
             let userName = snapshot?.value as? String ?? "Unknown"
             nameTextField.text = userName
-          })
+        })
         
     }
 
     @IBAction func updateProfile(_ sender: UIButton) {
+        var email = auth.currentUser?.email?.replacingOccurrences(of: ".", with: ",")
+        
+        if (emailTextField.text != auth.currentUser?.email) {
+            database.child("User").child(email!).removeValue()
+            database.child("User").child(emailTextField.text!).setValue(nameTextField.text)
+        } else {
+            database.child("User").child(email!).getData(completion:  { [self] error, snapshot in
+                guard error == nil else {
+                  print(error!.localizedDescription)
+                  return;
+                }
+                
+                let userName = snapshot?.value as? String ?? "Unknown"
+                
+                if (nameTextField.text != userName) {
+                    database.child("User").child(email!).setValue(nameTextField.text!)
+                }
+            })
+        }
+        
+        
+        
+        
         database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).setValue(nameTextField.text)
     }
     
