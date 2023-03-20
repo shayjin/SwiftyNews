@@ -49,8 +49,10 @@ class EditProfileViewController: UIViewController {
             })
                                                          
             database.child("User").child(emailTextField.text!.replacingOccurrences(of: ".", with: ",")).setValue(nameTextField.text)
+            Thread.sleep(forTimeInterval: 1)
             
             auth.currentUser?.updateEmail(to: emailTextField.text!)
+            Thread.sleep(forTimeInterval: 1)
         } else {
             database.child("User").child(email!).getData(completion:  { [self] error, snapshot in
                 guard error == nil else {
