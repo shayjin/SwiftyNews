@@ -92,6 +92,7 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
+  - NewsAPISwift (2.0)
   - PromisesObjC (2.2.0)
 
 DEPENDENCIES:
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - FirebaseDatabase
+  - NewsAPISwift (~> 2.0)
 
 SPEC REPOS:
   trunk:
@@ -114,6 +116,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - NewsAPISwift
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -129,8 +132,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: c9e714f7eec91a55641e2bab9f45fd83a219b882
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  NewsAPISwift: 61b069546b0170b48ee3ef7a0158b294e125d7b7
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: 520e1d3722612589de91b867c99db6d7be914028
+PODFILE CHECKSUM: 8dd449ab6e2c2b49e2b87ce541e6f2f64d7a729f
 
 COCOAPODS: 1.11.3
