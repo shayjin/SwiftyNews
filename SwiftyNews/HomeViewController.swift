@@ -18,6 +18,10 @@ class HomeViewController: UIViewController {
     let database = Database.database().reference()
     let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
+    var localNews = [[String: Any]]()
+    var USNews = [[String: Any]]()
+    var worldNews = [[String: Any]]()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +35,11 @@ class HomeViewController: UIViewController {
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
+        
+        
+        self.localNews = parseLocalAndUSNews("everything?qInTitle=Columbus+Ohio")
+        self.USNews = parseLocalAndUSNews("top-headlines?country=us")
+        self.worldNews = parseWorldNews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,21 +61,22 @@ class HomeViewController: UIViewController {
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
-            parseLocalAndUSNews("everything?qInTitle=Columbus+Ohio")
+            print(self.localNews)
         case 1:
             print("US News")
-            parseLocalAndUSNews("top-headlines?country=us")
         case 2:
             print("World News")
-            parseWorldNews()
         default:
             print("Default")
         }
         
     }
     
-    func parseLocalAndUSNews(_ apiArg: String) {
+    func parseLocalAndUSNews(_ apiArg: String) -> [[String: Any]] {
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&apiKey=\(apiKey)")!
+        
+        var articleList = [[String: Any]]()
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!)")
@@ -75,21 +85,21 @@ class HomeViewController: UIViewController {
 
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
                 guard let articles = json["articles"] as? [[String: Any]] else {
                     print("Error: Missing 'articles' field in JSON response")
                     return
                 }
-
-                for article in articles {
-                    let title = article["title"] as! String
-                    //print(title)
-                }
+                
+                articleList = articles
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
         }
         
         task.resume()
+        
+        return articleList
     }
     
     
@@ -116,8 +126,7 @@ class HomeViewController: UIViewController {
                         return
                     }
                     
-                    //articleList.append(articles[0][0])
-                    articleList.append(articles[0])
+                    articleList = articles
                 } catch let error {
                     print("Error parsing JSON: \(error)")
                 }
