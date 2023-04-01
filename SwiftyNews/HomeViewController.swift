@@ -18,9 +18,6 @@ class HomeViewController: UIViewController {
     let database = Database.database().reference()
     let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
-
-    let countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "ve", "za"]
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -87,7 +84,6 @@ class HomeViewController: UIViewController {
                     let title = article["title"] as! String
                     //print(title)
                 }
-                print("hi?")
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
@@ -99,8 +95,10 @@ class HomeViewController: UIViewController {
     
     func parseWorldNews() -> [[String: Any]] {
         var articleList = [[String: Any]]()
+        let countries = ["ae", "ar"]
+        // let countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "ve", "za"]
+        
         for country in countries {
-            print(country)
             let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&pageSize=1&apiKey=\(apiKey)"
             let url = URL(string: urlString)!
             
@@ -111,7 +109,6 @@ class HomeViewController: UIViewController {
                 }
                 
                 do {
-                    
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
                     guard let articles = json["articles"] as? [[String: Any]] else {
