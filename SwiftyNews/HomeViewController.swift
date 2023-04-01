@@ -16,7 +16,9 @@ class HomeViewController: UIViewController {
     
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let newsAPI = NewsAPI(apiKey: "6165d99f329f4996977bb4d7495c0940")
+    let APIKey = NewsAPI(apiKey: "6165d99f329f4996977bb4d7495c0940")
+    
+    let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=6165d99f329f4996977bb4d7495c0940")!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,15 +32,7 @@ class HomeViewController: UIViewController {
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
-        
-        newsAPI.getSources(language: .en, country: .us) { result in
-            switch result {
-            case .success(let sources):
-                print(sources)
-            case .failure(let error): break
-                // Handle error
-            }
-        }
+    
 
         
     }
@@ -73,8 +67,29 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func testPressed(_ sender: Any) {
-        print("test1")
-        database.child("test").child("ella22").setValue("hi")
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error: \(error!)")
+                return
+            }
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                guard let articles = json["articles"] as? [[String: Any]] else {
+                    print("Error: Missing 'articles' field in JSON response")
+                    return
+                }
+
+                for article in articles {
+                    let title = article["title"] as! String
+                    print(title)
+                }
+            } catch let error {
+                print("Error parsing JSON: \(error)")
+            }
+        }
+        
+        task.resume()
     }
     
 }
