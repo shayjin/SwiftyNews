@@ -16,9 +16,11 @@ class HomeViewController: UIViewController {
     
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let APIKey = NewsAPI(apiKey: "6165d99f329f4996977bb4d7495c0940")
+    let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
-    let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=6165d99f329f4996977bb4d7495c0940")!
+
+    let countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "ve", "za"]
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -67,7 +69,12 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func testPressed(_ sender: Any) {
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let local = URL(string: "https://newsapi.org/v2/everything?qInTitle=Columbus+Ohio&apiKey=\(apiKey)")!
+        
+        let US = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apiKey)")!
+    
+        
+        let task = URLSession.shared.dataTask(with: local) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!)")
                 return
@@ -82,14 +89,54 @@ class HomeViewController: UIViewController {
 
                 for article in articles {
                     let title = article["title"] as! String
-                    print(title)
+                    //print(title)
                 }
+                print("hi?")
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
         }
         
+        print("?")
+        parseWorldNews()
+        print("?")
+        
         task.resume()
+    }
+    
+    func parseWorldNews() -> [[String: Any]] {
+        var articleList = [[String: Any]]()
+        for country in countries {
+            print(country)
+            let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&pageSize=1&apiKey=\(apiKey)"
+            let url = URL(string: urlString)!
+            
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("Error: \(error!)")
+                    return
+                }
+                
+                do {
+                    
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+
+                    guard let articles = json["articles"] as? [[String: Any]] else {
+                        print("Error: Missing 'articles' field in JSON response")
+                        return
+                    }
+                    
+                    //articleList.append(articles[0][0])
+                    articleList.append(articles[0])
+                } catch let error {
+                    print("Error parsing JSON: \(error)")
+                }
+            }
+            
+            task.resume()
+        }
+        
+        return articleList
     }
     
 }
