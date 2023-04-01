@@ -34,9 +34,6 @@ class HomeViewController: UIViewController {
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
-    
-
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,23 +55,22 @@ class HomeViewController: UIViewController {
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
+            parseLocalAndUSNews("everything?qInTitle=Columbus+Ohio")
         case 1:
             print("US News")
+            parseLocalAndUSNews("top-headlines?country=us")
         case 2:
             print("World News")
+            parseWorldNews()
         default:
             print("Default")
         }
+        
     }
     
-    
-    @IBAction func testPressed(_ sender: Any) {
-        let local = URL(string: "https://newsapi.org/v2/everything?qInTitle=Columbus+Ohio&apiKey=\(apiKey)")!
-        
-        let US = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(apiKey)")!
-    
-        
-        let task = URLSession.shared.dataTask(with: local) { data, response, error in
+    func parseLocalAndUSNews(_ apiArg: String) {
+        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&apiKey=\(apiKey)")!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!)")
                 return
@@ -97,12 +93,9 @@ class HomeViewController: UIViewController {
             }
         }
         
-        print("?")
-        parseWorldNews()
-        print("?")
-        
         task.resume()
     }
+    
     
     func parseWorldNews() -> [[String: Any]] {
         var articleList = [[String: Any]]()
