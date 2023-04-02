@@ -2,13 +2,13 @@ import Foundation
 
 class News {
     var title: Any
-    var imageUrl: Any
+    var imageUrl: String
     var author: Any
     var date: Any
     var originalText: Any
     var simplifiedText: [String]
     
-    init(title: Any, imageUrl: Any, author: Any, date: Any, text: Any) {
+    init(title: Any, imageUrl: String, author: Any, date: Any, text: Any) {
         self.title = title
         self.imageUrl = imageUrl
         self.author = author

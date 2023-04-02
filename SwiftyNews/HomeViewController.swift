@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
+    let apiKey = "ad608b63d41f4e499c418e50c0c3789f"
     
     var userLocation: String?
     var localNews = [News]()
@@ -55,7 +55,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         //self.userLocation = getUserLocation()
 
         self.userLocation = "columbus+ohio"
-        self.localNews = parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
+        parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
+        print(self.localNews)
         //self.USNews = parseLocalAndUSNews("top-headlines?country=us")
         //self.worldNews = parseWorldNews()
         self.USNews = []
@@ -112,11 +113,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         return "hi"
     }
     
-    func parseLocalAndUSNews(_ apiArg: String) -> [News] {
+    func parseLocalAndUSNews(_ apiArg: String) {
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
-        //let url = URL(string: "https://naver.com")!
-        var articleList = [News]()
         
+        var articleList = [News]()
+        print("1")
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!)")
@@ -125,28 +126,40 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                
                 guard let articles = json["articles"] as? [[String: Any]] else {
                     print("Error: Missing 'articles' field in JSON response")
                     return
                 }
                 
                 for article in articles {
+                    var img: String
+                    print(article["urlToImage"])
+                    
+                    if let myString = article["urlToImage"] as? String {
+                        img = article["urlToImage"] as! String
+                    } else {
+                        img = "nil"
+                    }
+
                     let news = News(title: article["title"] as Any,
-                        imageUrl: article["urlToImage"] as Any, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
-                    articleList.append(news)
+                        imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
+                    self.localNews.append(news)
                 }
                 
-                print(articleList)
+                print(self.localNews)
+                
                 
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
+            
         }
+        
+        Thread.sleep(forTimeInterval: 2)
         
         task.resume()
         
-        return articleList
+        Thread.sleep(forTimeInterval: 2)
     }
     
     
@@ -176,6 +189,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         var news = News()
                         articleList.append(news)
                     }
+                    
+                    
                 } catch let error {
                     print("Error parsing JSON: \(error)")
                 }
@@ -184,7 +199,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             task.resume()
         }
         
-        print(articleList)
         return articleList
     }
     
@@ -212,24 +226,29 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         ]
         
         // 1.9012345679
-        
-        for i in 0...0 {
+        print(self.localNews)
+        for i in 0...self.localNews.count-1 {
             var imageView = UIComponnents[i][0] as! UIImageView
             
             // 여기 이미지 null일때 에러 체킹하삼
-            if let url = URL(string:  articleList[i].imageUrl as! String) {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let data = data {
-                        DispatchQueue.main.async {
-                            let image = UIImage(data: data)
-                            
-                            imageView.contentMode = .scaleAspectFit
-                            imageView.image = image
-                            imageView.layer.cornerRadius = 5.0
-                            imageView.layer.masksToBounds = true
+            
+            print(articleList[i].imageUrl)
+            
+            if articleList[i].imageUrl != "nil" {
+                if let url = URL(string: articleList[i].imageUrl ) {
+                    URLSession.shared.dataTask(with: url) { data, response, error in
+                        if let data = data {
+                            DispatchQueue.main.async {
+                                let image = UIImage(data: data)
+                                
+                                imageView.contentMode = .scaleAspectFit
+                                imageView.image = image
+                                imageView.layer.cornerRadius = 5.0
+                                imageView.layer.masksToBounds = true
+                            }
                         }
-                    }
-                }.resume()
+                    }.resume()
+                }
             }
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
