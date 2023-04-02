@@ -9,8 +9,9 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import NewsAPISwift
+import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var newsType: UISegmentedControl!
     
     let auth = Auth.auth()
@@ -34,19 +35,28 @@ class HomeViewController: UIViewController {
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
     
+    var locationManager: CLLocationManager?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View will appear")
     }
         
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("View did appear")
                 
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
         
-        self.userLocation = getUserLocation()
+
+        //self.userLocation = getUserLocation()
+        locationManager = CLLocationManager()
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager!.delegate = self
+        locationManager?.requestAlwaysAuthorization()
         
         self.localNews = parseLocalAndUSNews("everything?qInTitle=\(self.userLocation)")
         self.USNews = parseLocalAndUSNews("top-headlines?country=us")
@@ -80,7 +90,22 @@ class HomeViewController: UIViewController {
     }
     
     func getUserLocation() -> String {
-        return ""
+        let locationManager = CLLocationManager()
+
+        // Request location authorization from the user
+        locationManager.requestWhenInUseAuthorization()
+
+        // Check if the user granted location permission
+        switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse:
+            print("Location permission granted!")
+        case .denied:
+            print("Location permission denied!")
+        default:
+            print("Location permission not determined.")
+        }
+        
+        return "hi"
     }
     
     func parseLocalAndUSNews(_ apiArg: String) -> [[String: Any]] {
