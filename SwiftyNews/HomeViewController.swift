@@ -235,13 +235,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                                 
                                 imageView.contentMode = .scaleAspectFit
                                 imageView.image = image
-                                imageView.layer.cornerRadius = 5.0
-                                imageView.layer.masksToBounds = true
                             }
                         }
                     }.resume()
                 }
+            } else {
+                imageView.image = UIImage(named: "logo")
             }
+            
+            imageView.layer.cornerRadius = 5.0
+            imageView.layer.masksToBounds = true
+            
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
     }
