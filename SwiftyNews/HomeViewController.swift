@@ -53,14 +53,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
 
         //self.userLocation = getUserLocation()
-        locationManager = CLLocationManager()
-        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager!.delegate = self
-        locationManager?.requestAlwaysAuthorization()
-        
-        self.localNews = parseLocalAndUSNews("everything?qInTitle=\(self.userLocation)")
-        self.USNews = parseLocalAndUSNews("top-headlines?country=us")
-        self.worldNews = parseWorldNews()
+
+        self.userLocation = "columbus+ohio"
+        self.localNews = parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
+        //self.USNews = parseLocalAndUSNews("top-headlines?country=us")
+        //self.worldNews = parseWorldNews()
+        self.USNews = []
+        self.worldNews = []
         
         updateUI(self.localNews)
     }
@@ -80,16 +79,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
+            parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
             updateUI(self.localNews)
         case 1:
             print("US News")
-            updateUI(self.USNews)
+            //updateUI(self.USNews)
         case 2:
             print("World News")
-            updateUI(self.worldNews)
+            //updateUI(self.worldNews)
         default:
             print("Default")
-            updateUI(self.localNews)
+           // updateUI(self.localNews)
         }
     }
     
@@ -113,8 +113,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func parseLocalAndUSNews(_ apiArg: String) -> [News] {
-        //let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
-        let url = URL(string: "https://naver.com")!
+        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
+        //let url = URL(string: "https://naver.com")!
         var articleList = [News]()
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -132,9 +132,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 for article in articles {
-                    var news = News()
+                    let news = News(title: article["title"] as Any, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
                     articleList.append(news)
                 }
+                
+                print(articleList)
+                
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
@@ -180,10 +183,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             task.resume()
         }
         
+        print(articleList)
         return articleList
     }
     
     func updateUI(_ articleList: [News]) {
+        print("hi")
         let UIComponnents = [
             [self.picture1, self.title1],
             [self.picture2, self.title2],
@@ -207,7 +212,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         // 1.9012345679
         
-        for i in 0...temp.count-1 {
+        for i in 0...0 {
             var imageView = UIComponnents[i][0] as! UIImageView
             if let url = URL(string:  "https://www.cnet.com/a/img/resize/ebf01d34fd0f1dc9356ac90b2d151fb408827d55/hub/2023/03/27/23c03d52-a078-4000-8017-7e84af489aa0/hbo-max-elizabeth-olsen-love-death.jpg?auto=webp&fit=crop&height=630&width=1200") {
                 URLSession.shared.dataTask(with: url) { data, response, error in
@@ -223,7 +228,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     }
                 }.resume()
             }
-            (UIComponnents[i][1] as! UILabel).text = temp[i]["title"]
+            (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
     }
     

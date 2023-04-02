@@ -1,25 +1,22 @@
 import Foundation
 
 class News {
-    var type: String
-    var title: String
-    var author: String
-    var date: String
-    var originalText: String
+    var title: Any
+    var author: Any
+    var date: Any
+    var originalText: Any
     var simplifiedText: [String]
     
-    init(type: String, title: String, author: String, date: String, text: String) {
-        self.type = type
+    init(title: Any, author: Any, date: Any, text: Any) {
         self.title = title
         self.author = author
         self.date = date
-        self.originalText = text
+        self.originalText = text as! String
         self.simplifiedText = []
-        self.simplifiedText = simplify(text: text)
+        self.simplifiedText = simplify(text: text as! String)
     }
     
     init() {
-        self.type = ""
         self.title = ""
         self.author = ""
         self.date = ""
