@@ -56,10 +56,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
         self.userLocation = "columbus+ohio"
         parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
-        print(self.localNews)
-        //self.USNews = parseLocalAndUSNews("top-headlines?country=us")
+        parseLocalAndUSNews("top-headlines?country=us")
         //self.worldNews = parseWorldNews()
-        self.USNews = []
         self.worldNews = []
         
         updateUI(self.localNews)
@@ -80,11 +78,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
-            parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
             updateUI(self.localNews)
         case 1:
             print("US News")
-            //updateUI(self.USNews)
+            updateUI(self.USNews)
         case 2:
             print("World News")
             //updateUI(self.worldNews)
@@ -116,6 +113,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     func parseLocalAndUSNews(_ apiArg: String) {
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
         
+        var type: String
+        
+        if apiArg.contains("everything") {
+            type = "local"
+        } else {
+            type = "us"
+        }
+        
         var articleList = [News]()
         print("1")
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -143,7 +148,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
                     let news = News(title: article["title"] as Any,
                         imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
-                    self.localNews.append(news)
+                    
+                    if type == "local" {
+                        self.localNews.append(news)
+                    } else {
+                        self.USNews.append(news)
+                    }
+                
                 }
                 
                 print(self.localNews)
@@ -203,7 +214,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateUI(_ articleList: [News]) {
-        print("hi")
         let UIComponnents = [
             [self.picture1, self.title1],
             [self.picture2, self.title2],
@@ -212,27 +222,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             [self.picture5, self.title5]
         ]
         
-        var temp = [
-            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
-             "title": "Apple Never Gave Them USB. Now, They’re Getting It For Themselves", "description": "These days we use USB as a default for everything from low-speed serial ports to high-capacity storage, and the ubiquitous connector has evolved into a truly multi-purpose interface. It’s difficult …read more"],
-            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
-             "title": "Test2", "description": "blah blah blahhh"],
-            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
-             "title": "Test3", "description": "blah blah blahhh"],
-            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
-             "title": "Test4", "description": "blah blah blahhh"],
-            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
-             "title": "Test5", "description": "blah blah blahhh"]
-        ]
         
-        // 1.9012345679
-        print(self.localNews)
-        for i in 0...self.localNews.count-1 {
+        for i in 0...articleList.count-1 {
             var imageView = UIComponnents[i][0] as! UIImageView
-            
-            // 여기 이미지 null일때 에러 체킹하삼
-            
-            print(articleList[i].imageUrl)
             
             if articleList[i].imageUrl != "nil" {
                 if let url = URL(string: articleList[i].imageUrl ) {
