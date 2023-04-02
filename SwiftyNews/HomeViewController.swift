@@ -29,8 +29,16 @@ class HomeViewController: UIViewController {
     @IBOutlet var picture2: UIImageView!
     @IBOutlet var title2: UILabel!
     @IBOutlet var description2: UITextView!
+    @IBOutlet var picture3: UIImageView!
+    @IBOutlet var title3: UILabel!
+    @IBOutlet var description3: UITextView!
+    @IBOutlet var picture4: UIImageView!
+    @IBOutlet var title4: UILabel!
+    @IBOutlet var description4: UITextView!
+    @IBOutlet var picture5: UIImageView!
+    @IBOutlet var title5: UILabel!
     
-    
+    @IBOutlet var description5: UITextView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View will appear")
