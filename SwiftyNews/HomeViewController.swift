@@ -12,20 +12,18 @@ import NewsAPISwift
 
 class HomeViewController: UIViewController {
     @IBOutlet var newsType: UISegmentedControl!
-    @IBOutlet var testButton: UIButton!
     
     let auth = Auth.auth()
     let database = Database.database().reference()
     let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
+    var userLocation: String?
     var localNews = [[String: Any]]()
     var USNews = [[String: Any]]()
     var worldNews = [[String: Any]]()
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         print("View will appear")
     }
         
@@ -36,32 +34,30 @@ class HomeViewController: UIViewController {
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
         
+        self.userLocation = getUserLocation()
         
-        self.localNews = parseLocalAndUSNews("everything?qInTitle=Columbus+Ohio")
+        self.localNews = parseLocalAndUSNews("everything?qInTitle=\(self.userLocation)")
         self.USNews = parseLocalAndUSNews("top-headlines?country=us")
         self.worldNews = parseWorldNews()
+        
+        updateUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         print("View will disappear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         print("View did disappear")
     }
     
     
     @IBAction func switchNewsType(_ sender: Any) {
-        print(newsType.selectedSegmentIndex)
-        
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
-            print(self.localNews)
         case 1:
             print("US News")
         case 2:
@@ -69,12 +65,15 @@ class HomeViewController: UIViewController {
         default:
             print("Default")
         }
-        
+    }
+    
+    func getUserLocation() -> String {
+        return ""
     }
     
     func parseLocalAndUSNews(_ apiArg: String) -> [[String: Any]] {
-        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&apiKey=\(apiKey)")!
-        
+       // let url = URL(string: "https://newsapi.org/v2/\(apiArg)&apiKey=\(apiKey)")!
+        let url = URL(string: "https://naver.com")!
         var articleList = [[String: Any]]()
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -136,6 +135,10 @@ class HomeViewController: UIViewController {
         }
         
         return articleList
+    }
+    
+    func updateUI() {
+        
     }
     
 }

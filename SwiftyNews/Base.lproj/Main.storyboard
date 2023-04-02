@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="Home" title="HomeController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftyNews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Por-Kc-9kK">
@@ -37,26 +37,59 @@
                                     <action selector="switchNewsType:" destination="BYZ-38-t0r" eventType="valueChanged" id="eiz-37-3dU"/>
                                 </connections>
                             </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blp-4p-nnt">
+                                <rect key="frame" x="0.0" y="202" width="390" height="915"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mq-kD-yMf">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX2-hn-BWd">
+                                                <rect key="frame" x="174" y="55" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1200" id="5u8-w4-6Cd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Mq-kD-yMf" firstAttribute="leading" secondItem="Blp-4p-nnt" secondAttribute="leading" id="WAf-2L-t7b"/>
+                                    <constraint firstItem="0Mq-kD-yMf" firstAttribute="top" secondItem="Blp-4p-nnt" secondAttribute="top" id="hgj-eV-qTx"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Mq-kD-yMf" secondAttribute="bottom" id="tYk-2f-B76"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Mq-kD-yMf" secondAttribute="trailing" id="yOG-QJ-evP"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Blp-4p-nnt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Ym-Zo-n8y"/>
+                            <constraint firstItem="0Mq-kD-yMf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3NL-wl-57Y"/>
                             <constraint firstItem="Por-Kc-9kK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A0d-5g-pBR"/>
+                            <constraint firstItem="Blp-4p-nnt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DE6-GA-qh7"/>
                             <constraint firstItem="Por-Kc-9kK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DQS-Ik-FlJ"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GYr-4l-STv"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="20" id="Jyg-Us-Aaj"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OJy-FF-xvW"/>
+                            <constraint firstItem="Blp-4p-nnt" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="52" id="OMm-wX-kYu"/>
+                            <constraint firstItem="Blp-4p-nnt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wj0-Ed-UTj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="TMW-Bq-v3a"/>
                     <navigationItem key="navigationItem" id="GoO-Qj-HwI"/>
+                    <size key="freeformSize" width="390" height="1200"/>
                     <connections>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2178" y="1324"/>
+            <point key="canvasLocation" x="-2180" y="1323.6966824644549"/>
         </scene>
         <!--Home-->
         <scene sceneID="azP-of-vkZ">
