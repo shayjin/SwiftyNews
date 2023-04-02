@@ -37,8 +37,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var description4: UITextView!
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
-    
     @IBOutlet var description5: UITextView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View will appear")
@@ -154,11 +154,43 @@ class HomeViewController: UIViewController {
     }
     
     func updateUI() {
-        let UIComponnents = [[self.picture1, self.title1, self.description1], [self.picture2, self.title2, self.description2]]
+        let UIComponnents = [
+            [self.picture1, self.title1, self.description1],
+            [self.picture2, self.title2, self.description2],
+            [self.picture3, self.title3, self.description3],
+            [self.picture4, self.title4, self.description4],
+            [self.picture5, self.title5, self.description5]
+        ]
         
-        var temp = [["title": "Test1", "description": "blah blah"], ["title": "Test2", "description": "blah blah blahhh"]]
+        var temp = [
+            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
+             "title": "Apple Never Gave Them USB. Now, They’re Getting It For Themselves", "description": "These days we use USB as a default for everything from low-speed serial ports to high-capacity storage, and the ubiquitous connector has evolved into a truly multi-purpose interface. It’s difficult …read more"],
+            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
+             "title": "Test2", "description": "blah blah blahhh"],
+            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
+             "title": "Test3", "description": "blah blah blahhh"],
+            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
+             "title": "Test4", "description": "blah blah blahhh"],
+            ["image": "https://i.inside.com/6424307ded593e00183f0aad?width=1200&format=jpeg",
+             "title": "Test5", "description": "blah blah blahhh"]
+        ]
         
-        for i in 0...1 {
+        // 1.9012345679
+        
+        for i in 0...temp.count-1 {
+            var imageView = UIComponnents[i][0] as! UIImageView
+            if let url = URL(string:  "https://www.cnet.com/a/img/resize/ebf01d34fd0f1dc9356ac90b2d151fb408827d55/hub/2023/03/27/23c03d52-a078-4000-8017-7e84af489aa0/hbo-max-elizabeth-olsen-love-death.jpg?auto=webp&fit=crop&height=630&width=1200") {
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    if let data = data {
+                        DispatchQueue.main.async {
+                            let image = UIImage(data: data)
+                            
+                            imageView.contentMode = .scaleAspectFit
+                            imageView.image = image
+                        }
+                    }
+                }.resume()
+            }
             (UIComponnents[i][1] as! UILabel).text = temp[i]["title"]
             
             var des = UIComponnents[i][2] as! UITextView
