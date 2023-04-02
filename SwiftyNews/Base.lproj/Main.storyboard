@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="202" width="390" height="915"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mq-kD-yMf" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1065"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ryk-od-Zhu">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
@@ -65,22 +65,24 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01n-Q7-Zft">
-                                                                <rect key="frame" x="155" y="72" width="227" height="138"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gCG-aD-Dd5">
+                                                                <rect key="frame" x="155" y="72" width="227" height="148"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="gCG-aD-Dd5" firstAttribute="top" secondItem="1NG-rv-bZ3" secondAttribute="bottom" constant="8" symbolic="YES" id="AJ7-gD-KJ1"/>
+                                                            <constraint firstItem="gCG-aD-Dd5" firstAttribute="leading" secondItem="AA2-d4-LXG" secondAttribute="trailing" constant="8" symbolic="YES" id="KxB-Pb-bM1"/>
                                                             <constraint firstItem="AA2-d4-LXG" firstAttribute="leading" secondItem="yhQ-zP-hFp" secondAttribute="leading" constant="8" id="MlU-Rd-mVd"/>
                                                             <constraint firstItem="1NG-rv-bZ3" firstAttribute="top" secondItem="AA2-d4-LXG" secondAttribute="top" id="Uyp-u6-mDn"/>
-                                                            <constraint firstItem="01n-Q7-Zft" firstAttribute="leading" secondItem="AA2-d4-LXG" secondAttribute="trailing" constant="8" symbolic="YES" id="X75-2g-Pdz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="01n-Q7-Zft" secondAttribute="trailing" constant="8" id="ZsD-ys-i1V"/>
-                                                            <constraint firstAttribute="bottom" secondItem="01n-Q7-Zft" secondAttribute="bottom" constant="30" id="caK-K5-1bN"/>
-                                                            <constraint firstItem="01n-Q7-Zft" firstAttribute="top" secondItem="1NG-rv-bZ3" secondAttribute="bottom" constant="8" id="dT6-Ms-hcW"/>
+                                                            <constraint firstAttribute="bottom" secondItem="gCG-aD-Dd5" secondAttribute="bottom" constant="20" symbolic="YES" id="cKT-si-bDm"/>
                                                             <constraint firstItem="AA2-d4-LXG" firstAttribute="top" secondItem="yhQ-zP-hFp" secondAttribute="top" constant="20" symbolic="YES" id="gUM-MI-59R"/>
+                                                            <constraint firstAttribute="trailing" secondItem="gCG-aD-Dd5" secondAttribute="trailing" constant="8" id="lDW-5W-3Ok"/>
                                                             <constraint firstItem="1NG-rv-bZ3" firstAttribute="leading" secondItem="AA2-d4-LXG" secondAttribute="trailing" constant="8" symbolic="YES" id="lif-DA-QNC"/>
                                                             <constraint firstAttribute="trailing" secondItem="1NG-rv-bZ3" secondAttribute="trailing" constant="8" id="yYn-Ox-rez"/>
                                                         </constraints>
@@ -104,23 +106,25 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcQ-r0-SWR">
-                                                                <rect key="frame" x="155" y="72" width="227" height="138"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="64L-oR-tSU">
+                                                                <rect key="frame" x="155" y="72" width="227" height="148"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="XcQ-r0-SWR" secondAttribute="bottom" constant="30" id="1nq-kZ-dCh"/>
                                                             <constraint firstItem="Gej-xg-sBN" firstAttribute="leading" secondItem="6pL-cP-4VR" secondAttribute="trailing" constant="8" symbolic="YES" id="317-0z-Mse"/>
-                                                            <constraint firstItem="XcQ-r0-SWR" firstAttribute="leading" secondItem="6pL-cP-4VR" secondAttribute="trailing" constant="8" symbolic="YES" id="3jJ-at-33E"/>
-                                                            <constraint firstItem="XcQ-r0-SWR" firstAttribute="top" secondItem="Gej-xg-sBN" secondAttribute="bottom" constant="8" id="H2C-J9-Eal"/>
+                                                            <constraint firstItem="64L-oR-tSU" firstAttribute="leading" secondItem="6pL-cP-4VR" secondAttribute="trailing" constant="8" symbolic="YES" id="4gW-KK-7tS"/>
+                                                            <constraint firstItem="64L-oR-tSU" firstAttribute="top" secondItem="Gej-xg-sBN" secondAttribute="bottom" constant="8" symbolic="YES" id="Gwm-fa-ceE"/>
                                                             <constraint firstItem="Gej-xg-sBN" firstAttribute="top" secondItem="6pL-cP-4VR" secondAttribute="top" id="P0V-Sd-rGr"/>
                                                             <constraint firstItem="6pL-cP-4VR" firstAttribute="leading" secondItem="6ok-xd-atj" secondAttribute="leading" constant="8" id="Q6L-Ul-GBZ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="64L-oR-tSU" secondAttribute="bottom" constant="20" symbolic="YES" id="bYD-dn-VaN"/>
                                                             <constraint firstItem="6pL-cP-4VR" firstAttribute="top" secondItem="6ok-xd-atj" secondAttribute="top" constant="20" symbolic="YES" id="g4A-dl-qHd"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XcQ-r0-SWR" secondAttribute="trailing" constant="8" id="iMu-ha-6hI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="64L-oR-tSU" secondAttribute="trailing" constant="8" id="xNx-jN-dda"/>
                                                             <constraint firstAttribute="trailing" secondItem="Gej-xg-sBN" secondAttribute="trailing" constant="8" id="xzy-d2-cuP"/>
                                                         </constraints>
                                                     </view>
@@ -247,16 +251,17 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ryk-od-Zhu" secondAttribute="trailing" id="5Fb-wc-Yzb"/>
-                                            <constraint firstAttribute="bottom" secondItem="ryk-od-Zhu" secondAttribute="bottom" id="U1u-cA-8w4"/>
-                                            <constraint firstItem="ryk-od-Zhu" firstAttribute="top" secondItem="0Mq-kD-yMf" secondAttribute="top" id="s4w-T7-NJa"/>
+                                            <constraint firstItem="ryk-od-Zhu" firstAttribute="top" secondItem="0Mq-kD-yMf" secondAttribute="top" id="Eci-Bz-XMV"/>
+                                            <constraint firstAttribute="height" constant="1065" id="Uwg-yp-gqR"/>
+                                            <constraint firstAttribute="bottom" secondItem="ryk-od-Zhu" secondAttribute="bottom" constant="-135" id="y7Y-a1-qKO"/>
                                             <constraint firstItem="ryk-od-Zhu" firstAttribute="leading" secondItem="0Mq-kD-yMf" secondAttribute="leading" id="z1A-Oy-Z3z"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="0Mq-kD-yMf" firstAttribute="top" secondItem="Blp-4p-nnt" secondAttribute="top" id="1UA-Ky-q7U"/>
                                     <constraint firstItem="0Mq-kD-yMf" firstAttribute="leading" secondItem="Blp-4p-nnt" secondAttribute="leading" id="WAf-2L-t7b"/>
-                                    <constraint firstItem="0Mq-kD-yMf" firstAttribute="top" secondItem="Blp-4p-nnt" secondAttribute="top" id="hgj-eV-qTx"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Mq-kD-yMf" secondAttribute="bottom" id="tYk-2f-B76"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Mq-kD-yMf" secondAttribute="bottom" id="bQO-3G-eLg"/>
                                     <constraint firstAttribute="trailing" secondItem="0Mq-kD-yMf" secondAttribute="trailing" id="yOG-QJ-evP"/>
                                 </constraints>
                             </scrollView>
@@ -280,7 +285,13 @@
                     <navigationItem key="navigationItem" id="GoO-Qj-HwI"/>
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
+                        <outlet property="description1" destination="gCG-aD-Dd5" id="92n-Qx-seJ"/>
+                        <outlet property="description2" destination="64L-oR-tSU" id="bZQ-nt-KP7"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
+                        <outlet property="picture1" destination="AA2-d4-LXG" id="xz0-yD-2uO"/>
+                        <outlet property="picture2" destination="6pL-cP-4VR" id="zny-lE-cgt"/>
+                        <outlet property="title1" destination="1NG-rv-bZ3" id="UOg-ja-8Y8"/>
+                        <outlet property="title2" destination="Gej-xg-sBN" id="bqe-JF-9eG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -746,6 +757,9 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

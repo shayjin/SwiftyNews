@@ -22,6 +22,15 @@ class HomeViewController: UIViewController {
     var USNews = [[String: Any]]()
     var worldNews = [[String: Any]]()
     
+
+    @IBOutlet var picture1: UIImageView!
+    @IBOutlet var title1: UILabel!
+    @IBOutlet var description1: UITextView!
+    @IBOutlet var picture2: UIImageView!
+    @IBOutlet var title2: UILabel!
+    @IBOutlet var description2: UITextView!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("View will appear")
@@ -72,7 +81,7 @@ class HomeViewController: UIViewController {
     }
     
     func parseLocalAndUSNews(_ apiArg: String) -> [[String: Any]] {
-       // let url = URL(string: "https://newsapi.org/v2/\(apiArg)&apiKey=\(apiKey)")!
+        //let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
         let url = URL(string: "https://naver.com")!
         var articleList = [[String: Any]]()
         
@@ -104,8 +113,7 @@ class HomeViewController: UIViewController {
     
     func parseWorldNews() -> [[String: Any]] {
         var articleList = [[String: Any]]()
-        let countries = ["ae", "ar"]
-        // let countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "ve", "za"]
+        let countries = ["ae", "ar", "gr", "kr", "jp"]
         
         for country in countries {
             let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&pageSize=1&apiKey=\(apiKey)"
@@ -138,7 +146,17 @@ class HomeViewController: UIViewController {
     }
     
     func updateUI() {
+        let UIComponnents = [[self.picture1, self.title1, self.description1], [self.picture2, self.title2, self.description2]]
         
+        var temp = [["title": "Test1", "description": "blah blah"], ["title": "Test2", "description": "blah blah blahhh"]]
+        
+        for i in 0...1 {
+            (UIComponnents[i][1] as! UILabel).text = temp[i]["title"]
+            
+            var des = UIComponnents[i][2] as! UITextView
+            des.text = temp[i]["description"]
+            des.isEditable = false
+        }
     }
     
 }
