@@ -25,19 +25,14 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var picture1: UIImageView!
     @IBOutlet var title1: UILabel!
-    @IBOutlet var description1: UITextView!
     @IBOutlet var picture2: UIImageView!
     @IBOutlet var title2: UILabel!
-    @IBOutlet var description2: UITextView!
     @IBOutlet var picture3: UIImageView!
     @IBOutlet var title3: UILabel!
-    @IBOutlet var description3: UITextView!
     @IBOutlet var picture4: UIImageView!
     @IBOutlet var title4: UILabel!
-    @IBOutlet var description4: UITextView!
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
-    @IBOutlet var description5: UITextView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -155,11 +150,11 @@ class HomeViewController: UIViewController {
     
     func updateUI() {
         let UIComponnents = [
-            [self.picture1, self.title1, self.description1],
-            [self.picture2, self.title2, self.description2],
-            [self.picture3, self.title3, self.description3],
-            [self.picture4, self.title4, self.description4],
-            [self.picture5, self.title5, self.description5]
+            [self.picture1, self.title1],
+            [self.picture2, self.title2],
+            [self.picture3, self.title3],
+            [self.picture4, self.title4],
+            [self.picture5, self.title5]
         ]
         
         var temp = [
@@ -187,15 +182,13 @@ class HomeViewController: UIViewController {
                             
                             imageView.contentMode = .scaleAspectFit
                             imageView.image = image
+                            imageView.layer.cornerRadius = 5.0
+                            imageView.layer.masksToBounds = true
                         }
                     }
                 }.resume()
             }
             (UIComponnents[i][1] as! UILabel).text = temp[i]["title"]
-            
-            var des = UIComponnents[i][2] as! UITextView
-            des.text = temp[i]["description"]
-            des.isEditable = false
         }
     }
     
