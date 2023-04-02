@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.USNews = parseLocalAndUSNews("top-headlines?country=us")
         self.worldNews = parseWorldNews()
         
-        updateUI()
+        updateUI(self.localNews)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -80,12 +80,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         switch newsType.selectedSegmentIndex {
         case 0:
             print("Local News")
+            updateUI(self.localNews)
         case 1:
             print("US News")
+            updateUI(self.USNews)
         case 2:
             print("World News")
+            updateUI(self.worldNews)
         default:
             print("Default")
+            updateUI(self.localNews)
         }
     }
     
@@ -173,7 +177,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         return articleList
     }
     
-    func updateUI() {
+    func updateUI(_ articleList: [[String: Any]]) {
         let UIComponnents = [
             [self.picture1, self.title1],
             [self.picture2, self.title2],
