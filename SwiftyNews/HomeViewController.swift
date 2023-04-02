@@ -132,7 +132,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 for article in articles {
-                    let news = News(title: article["title"] as Any, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
+                    let news = News(title: article["title"] as Any,
+                        imageUrl: article["urlToImage"] as Any, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
                     articleList.append(news)
                 }
                 
@@ -214,7 +215,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         for i in 0...0 {
             var imageView = UIComponnents[i][0] as! UIImageView
-            if let url = URL(string:  "https://www.cnet.com/a/img/resize/ebf01d34fd0f1dc9356ac90b2d151fb408827d55/hub/2023/03/27/23c03d52-a078-4000-8017-7e84af489aa0/hbo-max-elizabeth-olsen-love-death.jpg?auto=webp&fit=crop&height=630&width=1200") {
+            
+            // 여기 이미지 null일때 에러 체킹하삼
+            if let url = URL(string:  articleList[i].imageUrl as! String) {
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     if let data = data {
                         DispatchQueue.main.async {
