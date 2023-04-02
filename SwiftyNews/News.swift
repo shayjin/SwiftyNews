@@ -18,6 +18,15 @@ class News {
         self.simplifiedText = simplify(text: text)
     }
     
+    init() {
+        self.type = ""
+        self.title = ""
+        self.author = ""
+        self.date = ""
+        self.originalText = ""
+        self.simplifiedText = []
+    }
+    
     func simplify(text: String) -> [String] {
         return [text]
     }

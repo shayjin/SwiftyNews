@@ -19,9 +19,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
     var userLocation: String?
-    var localNews = [[String: Any]]()
-    var USNews = [[String: Any]]()
-    var worldNews = [[String: Any]]()
+    var localNews = [News]()
+    var USNews = [News]()
+    var worldNews = [News]()
     
 
     @IBOutlet var picture1: UIImageView!
@@ -112,10 +112,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         return "hi"
     }
     
-    func parseLocalAndUSNews(_ apiArg: String) -> [[String: Any]] {
+    func parseLocalAndUSNews(_ apiArg: String) -> [News] {
         //let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
         let url = URL(string: "https://naver.com")!
-        var articleList = [[String: Any]]()
+        var articleList = [News]()
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
@@ -131,7 +131,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 
-                articleList = articles
+                for article in articles {
+                    var news = News()
+                    articleList.append(news)
+                }
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
@@ -143,8 +146,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func parseWorldNews() -> [[String: Any]] {
-        var articleList = [[String: Any]]()
+    func parseWorldNews() -> [News] {
+        var articleList = [News]()
         let countries = ["ae", "ar", "gr", "kr", "jp"]
         
         for country in countries {
@@ -165,7 +168,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         return
                     }
                     
-                    articleList = articles
+                    for article in articles {
+                        var news = News()
+                        articleList.append(news)
+                    }
                 } catch let error {
                     print("Error parsing JSON: \(error)")
                 }
@@ -177,7 +183,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         return articleList
     }
     
-    func updateUI(_ articleList: [[String: Any]]) {
+    func updateUI(_ articleList: [News]) {
         let UIComponnents = [
             [self.picture1, self.title1],
             [self.picture2, self.title2],
