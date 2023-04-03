@@ -10,6 +10,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase'
 pod 'FirebaseDatabase'
+pod 'Alamofire'
 pod 'NewsAPISwift', '~> 2.0'
 
   target 'SwiftyNewsTests' do

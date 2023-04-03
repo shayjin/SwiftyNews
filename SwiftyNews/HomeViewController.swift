@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import NewsAPISwift
 import CoreLocation
+import Alamofire
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var newsType: UISegmentedControl!
@@ -57,8 +58,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         getUserLocation()
 
-        parseLocalAndUSNews("top-headlines?country=us")
-        parseWorldNews()
+        //parseLocalAndUSNews("top-headlines?country=us")
+       // parseWorldNews()
        
         
     }
@@ -72,6 +73,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidDisappear(animated)
         print("View did disappear")
     }
+    
     
     
     @IBAction func switchNewsType(_ sender: Any) {

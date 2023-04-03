@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.6.4)
   - Firebase (10.6.0):
     - Firebase/Core (= 10.6.0)
   - Firebase/Auth (10.6.0):
@@ -96,6 +97,7 @@ PODS:
   - PromisesObjC (2.2.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -104,6 +106,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -120,6 +123,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Firebase: f13680471b021937f2230ea8503c7809d8c29806
   FirebaseAnalytics: 9f382605c5ee412b039212f054bf7a403d9850c1
   FirebaseAuth: 743e5cd568af59d6d99a91ea9300843672515cf7
@@ -135,6 +139,6 @@ SPEC CHECKSUMS:
   NewsAPISwift: 61b069546b0170b48ee3ef7a0158b294e125d7b7
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: 8dd449ab6e2c2b49e2b87ce541e6f2f64d7a729f
+PODFILE CHECKSUM: ee6f81a8886f8a0536ce490c91fb43e585770944
 
 COCOAPODS: 1.11.3
