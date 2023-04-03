@@ -57,8 +57,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.userLocation = "columbus+ohio"
         parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
         parseLocalAndUSNews("top-headlines?country=us")
-        //self.worldNews = parseWorldNews()
-        self.worldNews = []
+        parseWorldNews()
+        print(self.worldNews)
         
         updateUI(self.localNews)
     }
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             updateUI(self.USNews)
         case 2:
             print("World News")
-            //updateUI(self.worldNews)
+            updateUI(self.worldNews)
         default:
             print("Default")
            // updateUI(self.localNews)
@@ -138,7 +138,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                 
                 for article in articles {
                     var img: String
-                    print(article["urlToImage"])
                     
                     if let myString = article["urlToImage"] as? String {
                         img = article["urlToImage"] as! String
@@ -174,7 +173,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func parseWorldNews() -> [News] {
+    func parseWorldNews() {
         var articleList = [News]()
         let countries = ["ae", "ar", "gr", "kr", "jp"]
         
@@ -196,9 +195,31 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         return
                     }
                     
+                    print(articles)
+                    
                     for article in articles {
-                        var news = News()
-                        articleList.append(news)
+                        print("rodrod")
+                        var img: String
+                        var description: String
+                        
+                        if let myString = article["urlToImage"] as? String {
+                            img = article["urlToImage"] as! String
+                        } else {
+                            img = "nil"
+                        }
+                        
+                        if let myString = article["description"] as? String {
+                            description = article["description"] as! String
+                        } else {
+                            description = "nil"
+                        }
+
+                        let news = News(title: article["title"] as Any,
+                            imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: description)
+                        
+                        self.worldNews.append(news)
+                        Thread.sleep(forTimeInterval: 1)
+                        
                     }
                     
                     
@@ -206,11 +227,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     print("Error parsing JSON: \(error)")
                 }
             }
+            Thread.sleep(forTimeInterval: 2)
             
             task.resume()
+            Thread.sleep(forTimeInterval: 2)
+            print(self.worldNews)
         }
-        
-        return articleList
     }
     
     func updateUI(_ articleList: [News]) {
