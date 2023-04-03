@@ -16,9 +16,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "ad608b63d41f4e499c418e50c0c3789f"
+    let apiKey = "e1f7c16be88846ac8c9de7a3e82eae53"
     
-    var userLocation: String?
+    var userLocation: String? = nil
     var localNews = [News]()
     var USNews = [News]()
     var worldNews = [News]()
@@ -56,13 +56,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.newsType.setTitle("World", forSegmentAt: 2)
         
         getUserLocation()
-        
-      //  parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
-      //  parseLocalAndUSNews("top-headlines?country=us")
-       // parseWorldNews()
+
+        parseLocalAndUSNews("top-headlines?country=us")
+        parseWorldNews()
        
         
-        //updateUI(self.localNews)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,21 +95,85 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         let locationManager = CLLocationManager()
         var userLocation: String?
         
+        let states = ["AL": "Alabama",
+                      "AK": "Alaska",
+                      "AZ": "Arizona",
+                      "AR": "Arkansas",
+                      "CA": "California",
+                      "CO": "Colorado",
+                      "CT": "Connecticut",
+                      "DE": "Delaware",
+                      "FL": "Florida",
+                      "GA": "Georgia",
+                      "HI": "Hawaii",
+                      "ID": "Idaho",
+                      "IL": "Illinois",
+                      "IN": "Indiana",
+                      "IA": "Iowa",
+                      "KS": "Kansas",
+                      "KY": "Kentucky",
+                      "LA": "Louisiana",
+                      "ME": "Maine",
+                      "MD": "Maryland",
+                      "MA": "Massachusetts",
+                      "MI": "Michigan",
+                      "MN": "Minnesota",
+                      "MS": "Mississippi",
+                      "MO": "Missouri",
+                      "MT": "Montana",
+                      "NE": "Nebraska",
+                      "NV": "Nevada",
+                      "NH": "New Hampshire",
+                      "NJ": "New Jersey",
+                      "NM": "New Mexico",
+                      "NY": "New York",
+                      "NC": "North Carolina",
+                      "ND": "North Dakota",
+                      "OH": "Ohio",
+                      "OK": "Oklahoma",
+                      "OR": "Oregon",
+                      "PA": "Pennsylvania",
+                      "RI": "Rhode Island",
+                      "SC": "South Carolina",
+                      "SD": "South Dakota",
+                      "TN": "Tennessee",
+                      "TX": "Texas",
+                      "UT": "Utah",
+                      "VT": "Vermont",
+                      "VA": "Virginia",
+                      "WA": "Washington",
+                      "WV": "West Virginia",
+                      "WI": "Wisconsin",
+                      "WY": "Wyoming"]
+
+        
         while locationManager.authorizationStatus != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
+            Thread.sleep(forTimeInterval: 0.5)
         }
            
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
             if let location = locationManager.location {
                 let geocoder = CLGeocoder()
-                geocoder.reverseGeocodeLocation(location) { placemarks, error in
+                geocoder.reverseGeocodeLocation(location) { [self] placemarks, error in
                     if let error = error {
                         print("Error getting location: \(error.localizedDescription)")
                     } else if let placemark = placemarks?.first {
                         if let city = placemark.locality {
                             print("City: \(city)")
                             self.userLocation = city
+                            
+                            
+                            if let state = placemark.administrativeArea {
+                                if states[state] != nil {
+                                    self.userLocation! += "+\(states[state]!)"
+                                }
+                            }
+                            
+                            parseLocalAndUSNews("everything?qInTitle=\(self.userLocation!)")
+                            updateUI(self.localNews)
+
                         } else {
                             print("Unable to get city name.")
                         }
@@ -125,11 +187,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             print("Location permission not granted.")
         }
+        
+
     }
 
 
     
     func parseLocalAndUSNews(_ apiArg: String) {
+        print(apiArg)
+        print(apiKey)
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
         
         var type: String
