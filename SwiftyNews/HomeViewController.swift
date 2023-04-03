@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var USNews = [News]()
     var worldNews = [News]()
     
+    let semaphore = DispatchSemaphore(value: 0)
+    
 
     @IBOutlet var picture1: UIImageView!
     @IBOutlet var title1: UILabel!
@@ -46,25 +48,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("View did appear")
+        
+        print("LOCATION: \(self.userLocation)")
                 
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
         
-
-        self.userLocation = getUserLocation()
-
-        self.userLocation = "columbus+ohio"
+        getUserLocation()
+        
       //  parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
       //  parseLocalAndUSNews("top-headlines?country=us")
        // parseWorldNews()
        
         
         //updateUI(self.localNews)
-        
-        let locationManager = CLLocationManager()
-        print(locationManager)
-        locationManager.requestWhenInUseAuthorization()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,24 +93,41 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func getUserLocation() -> String {
+    func getUserLocation() {
         let locationManager = CLLocationManager()
-
-        // Request location authorization from the user
-        locationManager.requestWhenInUseAuthorization()
-
-        // Check if the user granted location permission
-        switch locationManager.authorizationStatus {
-        case .authorizedWhenInUse:
-            print("Location permission granted!")
-        case .denied:
-            print("Location permission denied!")
-        default:
-            print("Location permission not determined.")
-        }
+        var userLocation: String?
         
-        return "hi"
+        while locationManager.authorizationStatus != .authorizedWhenInUse {
+            locationManager.requestWhenInUseAuthorization()
+        }
+           
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+            if let location = locationManager.location {
+                let geocoder = CLGeocoder()
+                geocoder.reverseGeocodeLocation(location) { placemarks, error in
+                    if let error = error {
+                        print("Error getting location: \(error.localizedDescription)")
+                    } else if let placemark = placemarks?.first {
+                        if let city = placemark.locality {
+                            print("City: \(city)")
+                            self.userLocation = city
+                        } else {
+                            print("Unable to get city name.")
+                        }
+                    }
+
+                }
+            } else {
+                print("Unable to retrieve location.")
+            }
+            
+        } else {
+            print("Location permission not granted.")
+        }
     }
+
+
     
     func parseLocalAndUSNews(_ apiArg: String) {
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
