@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "e1f7c16be88846ac8c9de7a3e82eae53"
+    let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
     var userLocation: String? = nil
     var localNews = [News]()
@@ -56,7 +56,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
         
-        getUserLocation()
+        if localNews.count <= 0 {
+            getUserLocation()
+        } else {
+            updateUI(self.localNews)
+        }
 
         //parseLocalAndUSNews("top-headlines?country=us")
        // parseWorldNews()
@@ -235,6 +239,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     let news = News(title: article["title"] as Any,
                         imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
                     
+                   
                     if type == "local" {
                         self.localNews.append(news)
                     } else {
@@ -334,6 +339,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         for i in 0...articleList.count-1 {
             var imageView = UIComponnents[i][0] as! UIImageView
+            
+            print(articleList[i].simplifiedText)
             
             if articleList[i].imageUrl != "nil" {
                 if let url = URL(string: articleList[i].imageUrl ) {
