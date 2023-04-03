@@ -52,15 +52,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.newsType.setTitle("World", forSegmentAt: 2)
         
 
-        //self.userLocation = getUserLocation()
+        self.userLocation = getUserLocation()
 
         self.userLocation = "columbus+ohio"
         parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
         parseLocalAndUSNews("top-headlines?country=us")
         parseWorldNews()
-        print(self.worldNews)
+       
         
         updateUI(self.localNews)
+        
+        let locationManager = CLLocationManager()
+
+        locationManager.requestAlwaysAuthorization()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
