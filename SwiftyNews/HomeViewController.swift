@@ -55,16 +55,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         self.userLocation = getUserLocation()
 
         self.userLocation = "columbus+ohio"
-        parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
-        parseLocalAndUSNews("top-headlines?country=us")
-        parseWorldNews()
+      //  parseLocalAndUSNews("everything?qInTitle=columbus+ohio")
+      //  parseLocalAndUSNews("top-headlines?country=us")
+       // parseWorldNews()
        
         
-        updateUI(self.localNews)
+        //updateUI(self.localNews)
         
         let locationManager = CLLocationManager()
-
-        locationManager.requestAlwaysAuthorization()
+        print(locationManager)
+        locationManager.requestWhenInUseAuthorization()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
