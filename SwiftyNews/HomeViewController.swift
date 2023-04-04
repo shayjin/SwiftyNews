@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             updateUI(self.localNews)
         }
     
-        //parseLocalAndUSNews("top-headlines?country=us")
+        // parseLocalAndUSNews("top-headlines?country=us")
         // parseWorldNews()
     }
     
@@ -80,57 +80,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func getUserLocation() {
         let locationManager = CLLocationManager()
-        
-        let states = ["AL": "Alabama",
-                      "AK": "Alaska",
-                      "AZ": "Arizona",
-                      "AR": "Arkansas",
-                      "CA": "California",
-                      "CO": "Colorado",
-                      "CT": "Connecticut",
-                      "DE": "Delaware",
-                      "FL": "Florida",
-                      "GA": "Georgia",
-                      "HI": "Hawaii",
-                      "ID": "Idaho",
-                      "IL": "Illinois",
-                      "IN": "Indiana",
-                      "IA": "Iowa",
-                      "KS": "Kansas",
-                      "KY": "Kentucky",
-                      "LA": "Louisiana",
-                      "ME": "Maine",
-                      "MD": "Maryland",
-                      "MA": "Massachusetts",
-                      "MI": "Michigan",
-                      "MN": "Minnesota",
-                      "MS": "Mississippi",
-                      "MO": "Missouri",
-                      "MT": "Montana",
-                      "NE": "Nebraska",
-                      "NV": "Nevada",
-                      "NH": "New Hampshire",
-                      "NJ": "New Jersey",
-                      "NM": "New Mexico",
-                      "NY": "New York",
-                      "NC": "North Carolina",
-                      "ND": "North Dakota",
-                      "OH": "Ohio",
-                      "OK": "Oklahoma",
-                      "OR": "Oregon",
-                      "PA": "Pennsylvania",
-                      "RI": "Rhode Island",
-                      "SC": "South Carolina",
-                      "SD": "South Dakota",
-                      "TN": "Tennessee",
-                      "TX": "Texas",
-                      "UT": "Utah",
-                      "VT": "Vermont",
-                      "VA": "Virginia",
-                      "WA": "Washington",
-                      "WV": "West Virginia",
-                      "WI": "Wisconsin",
-                      "WY": "Wyoming"]
 
         while locationManager.authorizationStatus != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
@@ -149,9 +98,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                             self.userLocation = city
                             
                             if let state = placemark.administrativeArea {
-                                if states[state] != nil {
-                                    self.userLocation! += "+\(states[state]!)"
-                                }
+                                convertStateName(state)
                             }
                             
                             parseLocalAndUSNews("everything?qInTitle=\(self.userLocation!)")
@@ -314,6 +261,65 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             imageView.layer.cornerRadius = 5.0
             imageView.layer.masksToBounds = true
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
+        }
+    }
+    
+    func convertStateName(_ state: String) {
+        let states = [
+            "AL": "Alabama",
+            "AK": "Alaska",
+            "AZ": "Arizona",
+            "AR": "Arkansas",
+            "CA": "California",
+            "CO": "Colorado",
+            "CT": "Connecticut",
+            "DE": "Delaware",
+            "FL": "Florida",
+            "GA": "Georgia",
+            "HI": "Hawaii",
+            "ID": "Idaho",
+            "IL": "Illinois",
+            "IN": "Indiana",
+            "IA": "Iowa",
+            "KS": "Kansas",
+            "KY": "Kentucky",
+            "LA": "Louisiana",
+            "ME": "Maine",
+            "MD": "Maryland",
+            "MA": "Massachusetts",
+            "MI": "Michigan",
+            "MN": "Minnesota",
+            "MS": "Mississippi",
+            "MO": "Missouri",
+            "MT": "Montana",
+            "NE": "Nebraska",
+            "NV": "Nevada",
+            "NH": "New Hampshire",
+            "NJ": "New Jersey",
+            "NM": "New Mexico",
+            "NY": "New York",
+            "NC": "North Carolina",
+            "ND": "North Dakota",
+            "OH": "Ohio",
+            "OK": "Oklahoma",
+            "OR": "Oregon",
+            "PA": "Pennsylvania",
+            "RI": "Rhode Island",
+            "SC": "South Carolina",
+            "SD": "South Dakota",
+            "TN": "Tennessee",
+            "TX": "Texas",
+            "UT": "Utah",
+            "VT": "Vermont",
+            "VA": "Virginia",
+            "WA": "Washington",
+            "WV": "West Virginia",
+            "WI": "Wisconsin",
+            "WY": "Wyoming"
+        ]
+        
+        if states[state] != nil {
+            self.userLocation! += "+\(states[state]!)"
         }
     }
 }

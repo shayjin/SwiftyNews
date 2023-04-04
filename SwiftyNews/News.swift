@@ -31,7 +31,7 @@ class News {
     func simplify(text: String) {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
         ]
         
         let parameters: [String: Any] = [
