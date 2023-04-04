@@ -40,11 +40,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("View will appear")
-    }
-        
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -61,24 +56,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             updateUI(self.localNews)
         }
+        
 
         //parseLocalAndUSNews("top-headlines?country=us")
        // parseWorldNews()
-       
+    }
+    
+    
+    @IBAction func showNews(_ sender: Any) {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("View will disappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("View did disappear")
-    }
-    
-    
+
     
     @IBAction func switchNewsType(_ sender: Any) {
         switch newsType.selectedSegmentIndex {

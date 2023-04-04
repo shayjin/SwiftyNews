@@ -46,9 +46,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ryk-od-Zhu">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1100"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhQ-zP-hFp">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhQ-zP-hFp" customClass="view1">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-wW-L42">
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUI-jq-pb2"/>
+                                                                </connections>
+                                                            </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-d4-LXG">
                                                                 <rect key="frame" x="8" y="15" width="139" height="80"/>
                                                                 <constraints>
@@ -68,11 +76,15 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="xcF-wW-L42" firstAttribute="top" secondItem="yhQ-zP-hFp" secondAttribute="top" id="51V-Ml-9y3"/>
                                                             <constraint firstItem="AA2-d4-LXG" firstAttribute="leading" secondItem="yhQ-zP-hFp" secondAttribute="leading" constant="8" id="MlU-Rd-mVd"/>
                                                             <constraint firstItem="1NG-rv-bZ3" firstAttribute="top" secondItem="AA2-d4-LXG" secondAttribute="top" id="Uyp-u6-mDn"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xcF-wW-L42" secondAttribute="trailing" id="cjF-w4-w5e"/>
                                                             <constraint firstItem="AA2-d4-LXG" firstAttribute="top" secondItem="yhQ-zP-hFp" secondAttribute="top" constant="15" id="gUM-MI-59R"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xcF-wW-L42" secondAttribute="bottom" id="hr8-g1-SDE"/>
                                                             <constraint firstItem="1NG-rv-bZ3" firstAttribute="leading" secondItem="AA2-d4-LXG" secondAttribute="trailing" constant="8" symbolic="YES" id="lif-DA-QNC"/>
                                                             <constraint firstAttribute="bottom" secondItem="AA2-d4-LXG" secondAttribute="bottom" constant="15" id="oEU-tf-id7"/>
+                                                            <constraint firstItem="xcF-wW-L42" firstAttribute="leading" secondItem="yhQ-zP-hFp" secondAttribute="leading" id="rQY-4A-1Qs"/>
                                                             <constraint firstAttribute="trailing" secondItem="1NG-rv-bZ3" secondAttribute="trailing" constant="8" id="yYn-Ox-rez"/>
                                                         </constraints>
                                                     </view>
@@ -86,6 +98,15 @@
                                                                     <constraint firstAttribute="height" constant="80" id="grY-fW-yke"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-tf-m2a">
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVd-gY-rUv"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5G-Og-1w7">
                                                                 <rect key="frame" x="155" y="15" width="227" height="80"/>
                                                                 <constraints>
@@ -125,6 +146,15 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-rh-Ndu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAn-8D-kvI"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -146,6 +176,15 @@
                                                                     <constraint firstAttribute="height" constant="80" id="tGy-jU-6fv"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPL-ns-wmL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdI-Oq-Yug"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-X9-ecx">
                                                                 <rect key="frame" x="155" y="15" width="227" height="80"/>
                                                                 <constraints>
@@ -169,6 +208,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMh-Zh-16h">
                                                         <rect key="frame" x="0.0" y="440" width="390" height="110"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0As-FN-Bgg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vzh-rc-g45"/>
+                                                                </connections>
+                                                            </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pnb-D4-66W">
                                                                 <rect key="frame" x="8" y="15" width="139" height="80"/>
                                                                 <constraints>
