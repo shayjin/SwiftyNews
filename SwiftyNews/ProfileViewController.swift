@@ -10,8 +10,6 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
-    
-    
     @IBOutlet var loginUsernameLabel: UILabel!
     @IBOutlet var loginUsernameTextField: UITextField!
     @IBOutlet var loginPasswordLabel: UILabel!
@@ -39,23 +37,25 @@ class ProfileViewController: UIViewController {
     @IBOutlet var editProfileButton: UIButton!
     
     @IBOutlet var statusLogo: UILabel!
+    
     let auth = Auth.auth()
     let database = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.hidesBackButton = true
+        
         if auth.currentUser != nil {
             statusLogo.text = "Profile"
-            
             enable(page: "profile")
             
             database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).getData(completion:  { [self] error, snapshot in
+                
                 guard error == nil else {
                   print(error!.localizedDescription)
                   return;
                 }
+                
                 let userName = snapshot?.value as? String ?? "Unknown"
                 profileNameNameLabel.text = userName
               })
@@ -63,14 +63,12 @@ class ProfileViewController: UIViewController {
             profileEmailEmailLabel.text = auth.currentUser?.email
         } else {
             statusLogo.text = "Log In"
-            
             enable(page: "login")
         }
     }
     
     func enable(page: String) {
         let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
-        
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
         let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton]
         
@@ -112,9 +110,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-    
 
-    
     @IBAction func goToSignUpPage(_ sender: UIButton) {
         emailTextField.text = ""
         nameTextField.text = ""
@@ -127,15 +123,12 @@ class ProfileViewController: UIViewController {
         enable(page: "login")
     }
     
-    
     @IBAction func signUp(_ sender: UIButton) {
-        
         if (passwordTextField.text != retypePasswordTextField.text) {
             let alertController = UIAlertController(title: "Unmatched Password", message: "Passwords are not matched!", preferredStyle: .alert)
             let action = UIAlertAction(title: "Continue", style: .default, handler: nil)
             alertController.addAction(action)
             self.present(alertController, animated: true, completion: nil)
-            
         } else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { [self] authResult, error in
                 if let error = error {
@@ -144,21 +137,15 @@ class ProfileViewController: UIViewController {
                     alertController.addAction(action)
                     self.present(alertController, animated: true, completion: nil)
                 } else {
-                    
                     let email = emailTextField.text!.replacingOccurrences(of: ".", with: ",")
-                    
                     database.child("User").child(email).setValue(nameTextField!.text!)
-                    
                     auth.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
-                    
                     self.viewDidLoad()
                 }
             }
         }
     }
     
-
-
     @IBAction func login(_ sender: Any) {
         Auth.auth().signIn(withEmail: loginUsernameTextField.text!, password: loginPasswordTextField.text!) { [weak self] authResult, error in
             if (self!.auth.currentUser == nil) {
@@ -186,5 +173,4 @@ class ProfileViewController: UIViewController {
     @IBAction func editProfile(_ sender: Any) {
         
     }
-    
 }

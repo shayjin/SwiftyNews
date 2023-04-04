@@ -1,16 +1,8 @@
-//
-//  EditProfileViewController.swift
-//  SwiftyNews
-//
-//  Created by Shay on 3/10/23.
-//
-
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
 class EditProfileViewController: UIViewController {
-
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
     
@@ -19,20 +11,20 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.text = Auth.auth().currentUser?.email
         
-        nameTextField.text =
-        auth.currentUser?.displayName
+        emailTextField.text = Auth.auth().currentUser?.email
+        nameTextField.text = auth.currentUser?.displayName
         
         database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).getData(completion:  { [self] error, snapshot in
+            
             guard error == nil else {
               print(error!.localizedDescription)
               return;
             }
+            
             let userName = snapshot?.value as? String ?? "Unknown"
             nameTextField.text = userName
         })
-        
     }
 
     @IBAction func updateProfile(_ sender: UIButton) {
@@ -41,16 +33,18 @@ class EditProfileViewController: UIViewController {
         if (emailTextField.text != auth.currentUser?.email) {
             database.child("User").child(email!).getData(completion: {
                 [self] error, snapshot in
-                    guard error == nil else {
-                      print(error!.localizedDescription)
-                      return;
+                
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return;
                 }
+                
                 snapshot!.ref.removeValue()
             })
                                                          
             database.child("User").child(emailTextField.text!.replacingOccurrences(of: ".", with: ",")).setValue(nameTextField.text)
-            Thread.sleep(forTimeInterval: 1)
             
+            Thread.sleep(forTimeInterval: 1)
             auth.currentUser?.updateEmail(to: emailTextField.text!)
             Thread.sleep(forTimeInterval: 1)
         } else {
@@ -67,13 +61,7 @@ class EditProfileViewController: UIViewController {
                 }
             })
         }
-        
-        
-        
-        
-        database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).setValue(nameTextField.text)
-        
-        
-    }
     
+        database.child("User").child((auth.currentUser?.email?.replacingOccurrences(of: ".", with: ","))!).setValue(nameTextField.text)
+    }
 }

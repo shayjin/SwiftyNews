@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  SwiftyNews
-//
-//  Created by Shay on 2/22/23.
-//
-
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
@@ -13,8 +6,6 @@ import CoreLocation
 import Alamofire
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet var newsType: UISegmentedControl!
-    
     let auth = Auth.auth()
     let database = Database.database().reference()
     let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
@@ -23,10 +14,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     var localNews = [News]()
     var USNews = [News]()
     var worldNews = [News]()
-    
-    let semaphore = DispatchSemaphore(value: 0)
-    
 
+    @IBOutlet var newsType: UISegmentedControl!
     @IBOutlet var button1: UIButton!
     @IBOutlet var picture1: UIImageView!
     @IBOutlet var title1: UILabel!
@@ -43,9 +32,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
     
-    var locationManager: CLLocationManager?
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
                 
@@ -58,21 +44,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             updateUI(self.localNews)
         }
-        
-
-        
-        
-        
-        
-
-        //parseLocalAndUSNews("top-headlines?country=us")
-       // parseWorldNews()
-    }
     
+        //parseLocalAndUSNews("top-headlines?country=us")
+        // parseWorldNews()
+    }
     
     @IBAction func showNews(_ sender: UIButton) {
         performSegue(withIdentifier: "showNews", sender: sender)
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,30 +65,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
- 
-    
-
-    
     @IBAction func switchNewsType(_ sender: Any) {
         switch newsType.selectedSegmentIndex {
         case 0:
-            print("Local News")
             updateUI(self.localNews)
         case 1:
-            print("US News")
             updateUI(self.USNews)
         case 2:
-            print("World News")
             updateUI(self.worldNews)
         default:
-            print("Default")
-           // updateUI(self.localNews)
+            updateUI(self.localNews)
         }
     }
     
     func getUserLocation() {
         let locationManager = CLLocationManager()
-        var userLocation: String?
         
         let states = ["AL": "Alabama",
                       "AK": "Alaska",
@@ -163,7 +132,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                       "WI": "Wisconsin",
                       "WY": "Wyoming"]
 
-        
         while locationManager.authorizationStatus != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
             Thread.sleep(forTimeInterval: 0.5)
@@ -178,9 +146,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         print("Error getting location: \(error.localizedDescription)")
                     } else if let placemark = placemarks?.first {
                         if let city = placemark.locality {
-                            print("City: \(city)")
                             self.userLocation = city
-                            
                             
                             if let state = placemark.administrativeArea {
                                 if states[state] != nil {
@@ -190,41 +156,30 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                             
                             parseLocalAndUSNews("everything?qInTitle=\(self.userLocation!)")
                             updateUI(self.localNews)
-
                         } else {
                             print("Unable to get city name.")
                         }
                     }
-
                 }
             } else {
                 print("Unable to retrieve location.")
             }
-            
         } else {
             print("Location permission not granted.")
         }
-        
-
     }
 
-
-    
     func parseLocalAndUSNews(_ apiArg: String) {
-        print(apiArg)
-        print(apiKey)
         let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
-        
+        var articleList = [News]()
         var type: String
         
         if apiArg.contains("everything") {
             type = "local"
         } else {
-            type = "us"
+            type = "US"
         }
         
-        var articleList = [News]()
-        print("1")
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
                 print("Error: \(error!)")
@@ -246,32 +201,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     } else {
                         img = "nil"
                     }
-
-                    let news = News(title: article["title"] as Any,
-                        imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
                     
-                   
+                    let news = News(title: article["title"] as Any,
+                                    imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
+                    
                     if type == "local" {
                         self.localNews.append(news)
                     } else {
                         self.USNews.append(news)
                     }
-                
                 }
-                
-                print(self.localNews)
-                
-                
             } catch let error {
                 print("Error parsing JSON: \(error)")
             }
-            
         }
         
         Thread.sleep(forTimeInterval: 2)
-        
         task.resume()
-        
         Thread.sleep(forTimeInterval: 2)
     }
     
@@ -298,10 +244,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         return
                     }
                     
-                    print(articles)
-                    
                     for article in articles {
-                        print("rodrod")
                         var img: String
                         var description: String
                         
@@ -322,19 +265,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         
                         self.worldNews.append(news)
                         Thread.sleep(forTimeInterval: 1)
-                        
                     }
-                    
-                    
                 } catch let error {
                     print("Error parsing JSON: \(error)")
                 }
             }
             Thread.sleep(forTimeInterval: 2)
-            
             task.resume()
             Thread.sleep(forTimeInterval: 2)
-            print(self.worldNews)
         }
     }
     
@@ -346,15 +284,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             [self.picture4, self.title4, self.button4],
             [self.picture5, self.title5, self.button5]
         ]
-        
-        
+    
         for i in 0...articleList.count-1 {
             UIComponnents[i][2]!.tag = i + 1
             
             if i != 0 {
                 (UIComponnents[i][2] as! UIButton).addTarget(self, action: #selector(showNews(_:)), for: .touchUpInside)
-            }f
-            
+            }
             
             var imageView = UIComponnents[i][0] as! UIImageView
             
@@ -377,9 +313,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             
             imageView.layer.cornerRadius = 5.0
             imageView.layer.masksToBounds = true
-            
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
     }
-    
 }

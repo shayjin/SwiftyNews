@@ -29,7 +29,6 @@ class News {
     }
     
     func simplify(text: String) {
-        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Authorization": "Bearer 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"
@@ -46,24 +45,21 @@ class News {
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    if let responseJSON = value as? [String: Any],
-                       let choices = responseJSON["choices"] as? [[String: Any]],
-                       let firstChoice = choices.first,
-                       let text = firstChoice["text"] as? String {
-                        
-                        self.simplifiedText =  text.components(separatedBy: ".")
-                        print(self.simplifiedText)
-                    }
-                case .failure(let error):
-                    print(error)
+        .validate()
+        .responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let responseJSON = value as? [String: Any],
+                    let choices = responseJSON["choices"] as? [[String: Any]],
+                    let firstChoice = choices.first,
+                    let text = firstChoice["text"] as? String {
+                    
+                    self.simplifiedText =  text.components(separatedBy: ".")
+                    print(self.simplifiedText)
                 }
+            case .failure(let error):
+                print(error)
+            }
         }
-        
     }
-    
-    
 }
