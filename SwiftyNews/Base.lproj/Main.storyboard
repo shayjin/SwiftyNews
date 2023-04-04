@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-8A-A7y">
-                                <rect key="frame" x="166" y="182" width="14" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-8A-A7y">
+                                <rect key="frame" x="50" y="141" width="275" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,8 +26,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U4D-eo-QYc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QCK-8A-A7y" firstAttribute="top" secondItem="U4D-eo-QYc" secondAttribute="top" constant="50" id="4Bx-Tp-0wu"/>
+                            <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="QCK-8A-A7y" secondAttribute="trailing" constant="50" id="PCL-UK-Kht"/>
+                            <constraint firstItem="QCK-8A-A7y" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="50" id="bJq-hx-iF8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mgK-e0-1Fc"/>
+                    <connections>
+                        <outlet property="newsTitle" destination="QCK-8A-A7y" id="GOn-WI-Ogh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IU-JD-3no" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,12 +81,13 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhQ-zP-hFp" customClass="view1">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-wW-L42">
+                                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcF-wW-L42">
                                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUI-jq-pb2"/>
+                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAp-yI-0St"/>
+                                                                    <segue destination="lHe-BL-Dzd" kind="show" identifier="showNews" id="9jg-hg-Be9"/>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AA2-d4-LXG">
@@ -458,6 +466,7 @@
                     <navigationItem key="navigationItem" id="GoO-Qj-HwI"/>
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
+                        <outlet property="button1" destination="xcF-wW-L42" id="q5m-nA-3Zr"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                         <outlet property="picture1" destination="AA2-d4-LXG" id="xz0-yD-2uO"/>
                         <outlet property="picture2" destination="8zZ-C6-cWH" id="1eB-jo-ATb"/>
@@ -469,7 +478,6 @@
                         <outlet property="title3" destination="BiG-cu-ito" id="qKC-eo-KMe"/>
                         <outlet property="title4" destination="8bs-X9-ecx" id="mCB-Qd-lCn"/>
                         <outlet property="title5" destination="xcs-Eq-xNB" id="ls4-tu-QJG"/>
-                        <segue destination="lHe-BL-Dzd" kind="show" identifier="showNews" id="YeK-zC-OFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

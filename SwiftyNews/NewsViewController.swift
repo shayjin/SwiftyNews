@@ -10,12 +10,12 @@ import UIKit
 class NewsViewController: UIViewController {
     
     var news: News?
-    
 
+    @IBOutlet var newsTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.newsTitle.text = news?.title as? String
     }
     
 

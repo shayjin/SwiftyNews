@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let semaphore = DispatchSemaphore(value: 0)
     
 
+    @IBOutlet var button1: UIButton!
     @IBOutlet var picture1: UIImageView!
     @IBOutlet var title1: UILabel!
     @IBOutlet var picture2: UIImageView!
@@ -57,6 +58,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             updateUI(self.localNews)
         }
         
+        self.button1.tag = 1
+        
+        
 
         //parseLocalAndUSNews("top-headlines?country=us")
        // parseWorldNews()
@@ -64,18 +68,21 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func showNews(_ sender: UIButton) {
-        performSegue(withIdentifier: "showNews", sender: self)
+      //  performSegue(withIdentifier: "showNews", sender: self)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-            // Get a reference to the destination view controller
-            let destinationVC = segue.destination as! NewsViewController
-            
-            // Pass any necessary data to the destination view controller
-            destinationVC.news = News()
-        
+        if segue.identifier == "showNews" {
+            if let destinationVC = segue.destination as? NewsViewController,
+               let senderButton = sender as? UIButton {
+                destinationVC.news = self.localNews[senderButton.tag - 1]
+                print(self.localNews[senderButton.tag - 1].title)
+            }
+        }
     }
+    
+ 
     
 
     
