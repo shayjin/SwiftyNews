@@ -30,12 +30,16 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var button1: UIButton!
     @IBOutlet var picture1: UIImageView!
     @IBOutlet var title1: UILabel!
+    @IBOutlet var button2: UIButton!
     @IBOutlet var picture2: UIImageView!
     @IBOutlet var title2: UILabel!
     @IBOutlet var picture3: UIImageView!
+    @IBOutlet var button3: UIButton!
     @IBOutlet var title3: UILabel!
+    @IBOutlet var button4: UIButton!
     @IBOutlet var picture4: UIImageView!
     @IBOutlet var title4: UILabel!
+    @IBOutlet var button5: UIButton!
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
     
@@ -44,9 +48,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("View did appear")
-        
-        print("LOCATION: \(self.userLocation)")
                 
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
@@ -58,7 +59,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             updateUI(self.localNews)
         }
         
-        self.button1.tag = 1
+
+        
+        
         
         
 
@@ -68,7 +71,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func showNews(_ sender: UIButton) {
-      //  performSegue(withIdentifier: "showNews", sender: self)
+        performSegue(withIdentifier: "showNews", sender: sender)
 
     }
     
@@ -76,6 +79,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "showNews" {
             if let destinationVC = segue.destination as? NewsViewController,
                let senderButton = sender as? UIButton {
+                print("HIHI")
+                print(senderButton.tag)
                 destinationVC.news = self.localNews[senderButton.tag - 1]
                 print(self.localNews[senderButton.tag - 1].title)
             }
@@ -335,18 +340,23 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateUI(_ articleList: [News]) {
         let UIComponnents = [
-            [self.picture1, self.title1],
-            [self.picture2, self.title2],
-            [self.picture3, self.title3],
-            [self.picture4, self.title4],
-            [self.picture5, self.title5]
+            [self.picture1, self.title1, self.button1],
+            [self.picture2, self.title2, self.button2],
+            [self.picture3, self.title3, self.button3],
+            [self.picture4, self.title4, self.button4],
+            [self.picture5, self.title5, self.button5]
         ]
         
         
         for i in 0...articleList.count-1 {
-            var imageView = UIComponnents[i][0] as! UIImageView
+            UIComponnents[i][2]!.tag = i + 1
             
-            print(articleList[i].simplifiedText)
+            if i != 0 {
+                (UIComponnents[i][2] as! UIButton).addTarget(self, action: #selector(showNews(_:)), for: .touchUpInside)
+            }f
+            
+            
+            var imageView = UIComponnents[i][0] as! UIImageView
             
             if articleList[i].imageUrl != "nil" {
                 if let url = URL(string: articleList[i].imageUrl ) {

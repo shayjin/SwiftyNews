@@ -17,8 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-8A-A7y">
-                                <rect key="frame" x="50" y="141" width="275" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-8A-A7y">
+                                <rect key="frame" x="50" y="141" width="275" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="sof-MR-BRf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c47-b5-hH5">
+                                <rect key="frame" x="37" y="301" width="275" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-hN-yyx">
+                                <rect key="frame" x="37" y="405" width="275" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNN-MB-AM8">
+                                <rect key="frame" x="37" y="511" width="275" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,6 +58,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="mgK-e0-1Fc"/>
                     <connections>
+                        <outlet property="bp1" destination="c47-b5-hH5" id="Mos-Up-hQo"/>
+                        <outlet property="bp2" destination="fnu-hN-yyx" id="D3m-xW-60J"/>
+                        <outlet property="bp3" destination="YNN-MB-AM8" id="SR6-uw-bx3"/>
                         <outlet property="newsTitle" destination="QCK-8A-A7y" id="GOn-WI-Ogh"/>
                     </connections>
                 </viewController>
@@ -86,7 +113,6 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                                 <connections>
-                                                                    <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAp-yI-0St"/>
                                                                     <segue destination="lHe-BL-Dzd" kind="show" identifier="showNews" id="9jg-hg-Be9"/>
                                                                 </connections>
                                                             </button>
@@ -467,6 +493,10 @@
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
                         <outlet property="button1" destination="xcF-wW-L42" id="q5m-nA-3Zr"/>
+                        <outlet property="button2" destination="89Z-tf-m2a" id="AvN-ND-P0b"/>
+                        <outlet property="button3" destination="V1m-rh-Ndu" id="cq1-1F-rvE"/>
+                        <outlet property="button4" destination="GPL-ns-wmL" id="74v-ho-vY0"/>
+                        <outlet property="button5" destination="0As-FN-Bgg" id="gpY-te-Jju"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                         <outlet property="picture1" destination="AA2-d4-LXG" id="xz0-yD-2uO"/>
                         <outlet property="picture2" destination="8zZ-C6-cWH" id="1eB-jo-ATb"/>
