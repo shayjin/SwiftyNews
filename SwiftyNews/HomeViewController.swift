@@ -63,7 +63,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    @IBAction func showNews(_ sender: Any) {
+    @IBAction func showNews(_ sender: UIButton) {
+        performSegue(withIdentifier: "showNews", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+            // Get a reference to the destination view controller
+            let destinationVC = segue.destination as! NewsViewController
+            
+            // Pass any necessary data to the destination view controller
+            destinationVC.news = News()
         
     }
     

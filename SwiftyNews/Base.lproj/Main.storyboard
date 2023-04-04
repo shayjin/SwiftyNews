@@ -9,6 +9,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--News View Controller-->
+        <scene sceneID="wpe-Ol-4rE">
+            <objects>
+                <viewController storyboardIdentifier="news" id="lHe-BL-Dzd" customClass="NewsViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LoK-7x-FWp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-8A-A7y">
+                                <rect key="frame" x="166" y="182" width="14" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="U4D-eo-QYc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mgK-e0-1Fc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8IU-JD-3no" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3058.4000000000001" y="1430.5418719211823"/>
+        </scene>
         <!--HomeController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -444,6 +469,7 @@
                         <outlet property="title3" destination="BiG-cu-ito" id="qKC-eo-KMe"/>
                         <outlet property="title4" destination="8bs-X9-ecx" id="mCB-Qd-lCn"/>
                         <outlet property="title5" destination="xcs-Eq-xNB" id="ls4-tu-QJG"/>
+                        <segue destination="lHe-BL-Dzd" kind="show" identifier="showNews" id="YeK-zC-OFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -541,7 +567,7 @@
         <!--ProfileController-->
         <scene sceneID="iH9-M7-K9a">
             <objects>
-                <viewController title="ProfileController" id="zSA-di-Jmq" customClass="ProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" title="ProfileController" id="zSA-di-Jmq" customClass="ProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z8a-lW-UyL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -801,7 +827,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="UfH-x3-WKt">
             <objects>
-                <viewController id="eZP-Pa-ifT" customClass="EditProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit" id="eZP-Pa-ifT" customClass="EditProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AC3-NB-FJ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

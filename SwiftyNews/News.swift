@@ -32,7 +32,7 @@ class News {
         
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer sk-ateH17Gc5w1fLAISNOOdT3BlbkFJmMZYR1EXHiHgK0tGgovu99"
         ]
         
         let parameters: [String: Any] = [
