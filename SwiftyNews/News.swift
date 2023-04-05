@@ -55,7 +55,6 @@ class News {
                     let text = firstChoice["text"] as? String {
                     
                     self.simplifiedText =  text.components(separatedBy: ".")
-                    print(self.simplifiedText)
                 }
             case .failure(let error):
                 print(error)
