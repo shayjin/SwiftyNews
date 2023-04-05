@@ -16,7 +16,7 @@ class NewsViewController: UIViewController {
     
     func updateUI() {
         self.newsTitle.text = news!.title as? String
-        self.author.text = "Written by: " + news?.author as? String
+        self.author.text = "Written by: \(news?.author as? String)"
         
         if news!.imageUrl != "nil" {
             if let url = URL(string: news!.imageUrl) {
