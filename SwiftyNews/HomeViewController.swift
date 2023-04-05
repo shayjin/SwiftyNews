@@ -57,10 +57,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "showNews" {
             if let destinationVC = segue.destination as? NewsViewController,
                let senderButton = sender as? UIButton {
-                print("HIHI")
-                print(senderButton.tag)
                 destinationVC.news = self.localNews[senderButton.tag - 1]
-                print(self.localNews[senderButton.tag - 1].title)
             }
         }
     }
@@ -140,6 +137,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 
+                print(articles)
                 for article in articles {
                     var img: String
                     
@@ -150,7 +148,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     }
                     
                     let news = News(title: article["title"] as Any,
-                                    imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any)
+                                    imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any, url: article["url"] as! String)
                     
                     if type == "local" {
                         self.localNews.append(news)
@@ -208,7 +206,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                         }
 
                         let news = News(title: article["title"] as Any,
-                            imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: description)
+                                        imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: description, url: article["url"] as! String)
                         
                         self.worldNews.append(news)
                         Thread.sleep(forTimeInterval: 1)

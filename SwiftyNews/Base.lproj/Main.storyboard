@@ -33,13 +33,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-mF-S0I">
-                                <rect key="frame" x="20" y="379" width="339" height="790"/>
+                                <rect key="frame" x="20" y="421" width="339" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-5a-ds7">
-                                        <rect key="frame" x="0.0" y="0.0" width="339" height="790"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="748"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FER-c1-AnV">
-                                                <rect key="frame" x="0.0" y="0.0" width="339" height="790"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="339" height="748"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -74,6 +74,21 @@
                                     <constraint firstAttribute="width" constant="277" id="mE7-b0-kJf"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWH-q8-pL7">
+                                <rect key="frame" x="51" y="379" width="120" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Like"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpj-nn-I9Z">
+                                <rect key="frame" x="204" y="379" width="126" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Read Original"/>
+                                <connections>
+                                    <action selector="convertText:" destination="lHe-BL-Dzd" eventType="touchUpInside" id="47c-11-NYx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U4D-eo-QYc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,7 +101,7 @@
                             <constraint firstItem="Lgg-JV-gra" firstAttribute="top" secondItem="QCK-8A-A7y" secondAttribute="bottom" constant="20" id="Zjj-zv-RbI"/>
                             <constraint firstItem="QCK-8A-A7y" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="20" id="bJq-hx-iF8"/>
                             <constraint firstItem="GLM-Uk-ZmU" firstAttribute="top" secondItem="QCK-8A-A7y" secondAttribute="bottom" constant="-3" id="dfN-hi-u3n"/>
-                            <constraint firstItem="VvE-mF-S0I" firstAttribute="top" secondItem="Lgg-JV-gra" secondAttribute="bottom" constant="8" symbolic="YES" id="gHG-eN-kUs"/>
+                            <constraint firstItem="VvE-mF-S0I" firstAttribute="top" secondItem="Lgg-JV-gra" secondAttribute="bottom" constant="50" id="gHG-eN-kUs"/>
                             <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="Lgg-JV-gra" secondAttribute="trailing" constant="46.999999999999943" id="jwn-7a-sVw"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VvE-mF-S0I" secondAttribute="bottom" constant="-52" id="mY3-mU-H2l"/>
                             <constraint firstItem="VvE-mF-S0I" firstAttribute="leading" secondItem="GLM-Uk-ZmU" secondAttribute="leading" id="uL9-nk-T8H"/>
@@ -97,7 +112,9 @@
                     <connections>
                         <outlet property="author" destination="GLM-Uk-ZmU" id="EHl-NW-s53"/>
                         <outlet property="content" destination="FER-c1-AnV" id="WgR-uW-44U"/>
+                        <outlet property="convertButton" destination="wpj-nn-I9Z" id="t2Q-SN-agy"/>
                         <outlet property="imageView" destination="Lgg-JV-gra" id="Hj7-sP-GHL"/>
+                        <outlet property="likeButton" destination="QWH-q8-pL7" id="hKe-Qu-NnA"/>
                         <outlet property="newsTitle" destination="QCK-8A-A7y" id="GOn-WI-Ogh"/>
                         <outlet property="scrollView" destination="VvE-mF-S0I" id="3KU-dm-oZn"/>
                     </connections>

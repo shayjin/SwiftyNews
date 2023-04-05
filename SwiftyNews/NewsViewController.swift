@@ -8,13 +8,25 @@ class NewsViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var convertButton: UIButton!
+    
     var news: News?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateUI()
     }
+    
+    
+    @IBAction func convertText(_ sender: Any) {
+        if let url = URL(string: news!.url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     
     func updateUI() {
         self.scrollView.isScrollEnabled = false
@@ -61,7 +73,5 @@ class NewsViewController: UIViewController {
         if news!.simplifiedText[2].count != 0 {
             self.content.text! += "\n\n📌 \(news!.simplifiedText[2]). "
         }
-        
-        
     }
 }

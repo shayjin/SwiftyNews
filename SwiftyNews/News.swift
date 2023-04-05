@@ -8,15 +8,23 @@ class News {
     var date: Any
     var originalText: Any
     var simplifiedText: [String]
+    var url: String
     
-    init(title: Any, imageUrl: String, author: Any, date: Any, text: Any) {
+    let headers: HTTPHeaders = [
+        "Content-Type": "application/json",
+        "Authorization": "Bearer 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"
+    ]
+    
+    init(title: Any, imageUrl: String, author: Any, date: Any, text: Any, url: String) {
         self.title = title
         self.imageUrl = imageUrl
         self.author = author
         self.date = date
+        self.url = url
         self.originalText = text as! String
         self.simplifiedText = []
         simplify(text: text as! String)
+        
     }
     
     init() {
@@ -26,14 +34,10 @@ class News {
         self.date = ""
         self.originalText = ""
         self.simplifiedText = []
+        self.url = ""
     }
     
     func simplify(text: String) {
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
-        ]
-        
         let parameters: [String: Any] = [
             "prompt": "Summarize this article in 1 to 3 sentences seperated by a period: \"\(text)\"",
             "temperature": 0.5,
