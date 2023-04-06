@@ -626,7 +626,7 @@
             <objects>
                 <viewController storyboardIdentifier="search" title="SearchController" id="bn2-0s-CFj" customClass="SearchViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8k-yZ-1HQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftyNews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vw-sz-SEK">
@@ -651,9 +651,12 @@
                                 <rect key="frame" x="268" y="158" width="87" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="bn2-0s-CFj" eventType="touchUpInside" id="NGJ-mz-JOs"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baF-RT-Jbg">
-                                <rect key="frame" x="20" y="201" width="335" height="914"/>
+                                <rect key="frame" x="20" y="201" width="335" height="916"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCo-f0-fhW" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="1100"/>
@@ -680,7 +683,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ck-OL-4cW" customClass="views">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ck-OL-4cW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -719,7 +722,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5E-lb-1gj" customClass="views">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5E-lb-1gj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -758,7 +761,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEc-U2-08g" customClass="views">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEc-U2-08g">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -797,7 +800,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4Z-l4-9b9" customClass="views">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4Z-l4-9b9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -836,7 +839,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-ke-s05" customClass="views">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-ke-s05">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -1052,22 +1055,30 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="9HU-oU-i3l" firstAttribute="top" secondItem="giD-JP-OT9" secondAttribute="bottom" id="9bE-YD-T01"/>
+                                                    <constraint firstAttribute="trailing" secondItem="giD-JP-OT9" secondAttribute="trailing" id="YCD-ex-RW3"/>
+                                                    <constraint firstItem="giD-JP-OT9" firstAttribute="leading" secondItem="bXs-lC-KKJ" secondAttribute="leading" id="hso-e8-9P4"/>
+                                                    <constraint firstItem="giD-JP-OT9" firstAttribute="top" secondItem="bXs-lC-KKJ" secondAttribute="top" id="jps-cY-SUU"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="bXs-lC-KKJ" firstAttribute="leading" secondItem="XCo-f0-fhW" secondAttribute="leading" id="5xA-gh-uaC"/>
-                                            <constraint firstAttribute="trailing" secondItem="bXs-lC-KKJ" secondAttribute="trailing" id="Did-fF-BG2"/>
+                                            <constraint firstAttribute="bottom" secondItem="bXs-lC-KKJ" secondAttribute="bottom" id="5dC-aZ-9Pg"/>
                                             <constraint firstItem="bXs-lC-KKJ" firstAttribute="top" secondItem="XCo-f0-fhW" secondAttribute="top" id="OoV-ma-qZq"/>
                                             <constraint firstAttribute="height" constant="1100" id="m1U-wa-XcT"/>
+                                            <constraint firstItem="bXs-lC-KKJ" firstAttribute="leading" secondItem="XCo-f0-fhW" secondAttribute="leading" id="oAS-3u-Wnl"/>
+                                            <constraint firstAttribute="trailing" secondItem="bXs-lC-KKJ" secondAttribute="trailing" id="s5f-TQ-f8V"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XCo-f0-fhW" secondAttribute="trailing" id="4FR-HY-dgX"/>
                                     <constraint firstItem="XCo-f0-fhW" firstAttribute="top" secondItem="baF-RT-Jbg" secondAttribute="top" id="6vR-XI-PzV"/>
                                     <constraint firstAttribute="bottom" secondItem="XCo-f0-fhW" secondAttribute="bottom" id="HNt-KM-Fz5"/>
-                                    <constraint firstItem="XCo-f0-fhW" firstAttribute="leading" secondItem="baF-RT-Jbg" secondAttribute="leading" id="Z9Z-ug-bCq"/>
+                                    <constraint firstItem="XCo-f0-fhW" firstAttribute="leading" secondItem="baF-RT-Jbg" secondAttribute="leading" id="fan-pG-tFb"/>
+                                    <constraint firstItem="XCo-f0-fhW" firstAttribute="centerX" secondItem="baF-RT-Jbg" secondAttribute="centerX" id="jEX-T2-OlP"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCo-f0-fhW" secondAttribute="trailing" id="zC0-Ia-WEJ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1080,21 +1091,37 @@
                             <constraint firstItem="2Vj-nt-rhN" firstAttribute="leading" secondItem="hcb-Pi-eks" secondAttribute="leading" constant="20" id="TQk-JC-SJI"/>
                             <constraint firstItem="2Vj-nt-rhN" firstAttribute="top" secondItem="7vw-sz-SEK" secondAttribute="bottom" constant="8" id="VQD-Cq-rV6"/>
                             <constraint firstItem="hcb-Pi-eks" firstAttribute="trailing" secondItem="QyY-No-Vqw" secondAttribute="trailing" constant="20" id="chc-5N-NHq"/>
-                            <constraint firstItem="baF-RT-Jbg" firstAttribute="centerX" secondItem="7vw-sz-SEK" secondAttribute="centerX" id="eba-KM-aA3"/>
                             <constraint firstItem="2Vj-nt-rhN" firstAttribute="top" secondItem="QyY-No-Vqw" secondAttribute="top" id="fct-mn-gaX"/>
                             <constraint firstItem="2Vj-nt-rhN" firstAttribute="centerY" secondItem="QyY-No-Vqw" secondAttribute="centerY" id="gm7-fD-QX0"/>
                             <constraint firstItem="QyY-No-Vqw" firstAttribute="leading" secondItem="2Vj-nt-rhN" secondAttribute="trailing" constant="8" id="qqP-wZ-g06"/>
-                            <constraint firstAttribute="bottom" secondItem="baF-RT-Jbg" secondAttribute="bottom" constant="-303" id="tn7-pA-twb"/>
                             <constraint firstItem="hcb-Pi-eks" firstAttribute="trailing" secondItem="baF-RT-Jbg" secondAttribute="trailing" constant="20" id="vEg-bL-t5a"/>
                             <constraint firstItem="7vw-sz-SEK" firstAttribute="centerX" secondItem="g8k-yZ-1HQ" secondAttribute="centerX" id="vH9-e5-9a5"/>
+                            <constraint firstItem="hcb-Pi-eks" firstAttribute="bottom" secondItem="baF-RT-Jbg" secondAttribute="bottom" id="vc5-C4-8ig"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ENm-ci-Teg"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="HsU-Eh-Os8"/>
                     <navigationItem key="navigationItem" id="BSZ-pk-FHN"/>
-                    <size key="freeformSize" width="375" height="812"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="button1" destination="6ck-OL-4cW" id="wYk-d3-UIy"/>
+                        <outlet property="button2" destination="u5E-lb-1gj" id="Czc-8L-P8q"/>
+                        <outlet property="button3" destination="GEc-U2-08g" id="aav-6R-uds"/>
+                        <outlet property="button4" destination="E4Z-l4-9b9" id="3yu-Xz-7uX"/>
+                        <outlet property="button5" destination="IB4-ke-s05" id="coX-Q9-vDA"/>
+                        <outlet property="picture1" destination="N7a-Lr-5VK" id="EcP-Vd-Vnr"/>
+                        <outlet property="picture2" destination="JSt-Yo-Kr0" id="Gx9-ms-Xrh"/>
+                        <outlet property="picture3" destination="RVj-da-Ea5" id="q1p-k7-g7v"/>
+                        <outlet property="picture4" destination="CxD-TS-fGI" id="i4F-O7-Yjq"/>
+                        <outlet property="picture5" destination="ANX-FE-kND" id="6NZ-mR-M0b"/>
+                        <outlet property="scrollView" destination="baF-RT-Jbg" id="O3E-WT-TUx"/>
                         <outlet property="searchButton" destination="QyY-No-Vqw" id="owL-gy-CCe"/>
                         <outlet property="textField" destination="2Vj-nt-rhN" id="EBY-5d-yb8"/>
+                        <outlet property="title1" destination="c6u-aJ-TkS" id="RkL-zT-V7P"/>
+                        <outlet property="title2" destination="0Oe-3s-enC" id="8ge-9S-hrb"/>
+                        <outlet property="title3" destination="qGl-Zy-iDq" id="T7c-bq-hUi"/>
+                        <outlet property="title4" destination="fgS-UF-S19" id="zBe-vH-UuI"/>
+                        <outlet property="title5" destination="fte-gN-MbF" id="kZU-Vu-wcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPJ-6h-K0l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
