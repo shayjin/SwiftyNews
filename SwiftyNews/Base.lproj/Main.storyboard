@@ -79,6 +79,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Like"/>
+                                <connections>
+                                    <action selector="like:" destination="lHe-BL-Dzd" eventType="touchUpInside" id="hk2-HY-vTA"/>
+                                    <segue destination="zSA-di-Jmq" kind="show" id="IEv-sB-rI2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpj-nn-I9Z">
                                 <rect key="frame" x="204" y="379" width="126" height="35"/>
@@ -114,7 +118,7 @@
                         <outlet property="content" destination="FER-c1-AnV" id="WgR-uW-44U"/>
                         <outlet property="convertButton" destination="wpj-nn-I9Z" id="t2Q-SN-agy"/>
                         <outlet property="imageView" destination="Lgg-JV-gra" id="Hj7-sP-GHL"/>
-                        <outlet property="likeButton" destination="QWH-q8-pL7" id="hKe-Qu-NnA"/>
+                        <outlet property="likeButton" destination="QWH-q8-pL7" id="G9f-pJ-vzx"/>
                         <outlet property="newsTitle" destination="QCK-8A-A7y" id="GOn-WI-Ogh"/>
                         <outlet property="scrollView" destination="VvE-mF-S0I" id="3KU-dm-oZn"/>
                     </connections>
@@ -1483,7 +1487,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oTw-4J-279"/>
-        <segue reference="a3V-2k-cKG"/>
+        <segue reference="IEv-sB-rI2"/>
         <segue reference="SMW-iB-5OC"/>
     </inferredMetricsTieBreakers>
     <resources>

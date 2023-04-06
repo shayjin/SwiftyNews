@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class NewsViewController: UIViewController {
     @IBOutlet var newsTitle: UILabel!
@@ -11,6 +13,7 @@ class NewsViewController: UIViewController {
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var convertButton: UIButton!
     
+    let auth = Auth.auth()
     var news: News?
     
     
@@ -18,6 +21,30 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
 
         updateUI()
+        
+        if auth.currentUser != nil {
+            
+        } else {
+
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if auth.currentUser != nil {
+            return false
+        }
+        
+        return true
+    }
+    
+    
+    @IBAction func like(_ sender: Any) {
+        if auth.currentUser != nil {
+            
+        } else {
+            
+            
+        }
     }
     
     

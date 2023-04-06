@@ -42,6 +42,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+            view.addGestureRecognizer(tapGesture)
        
     }
     
@@ -93,7 +96,6 @@ class SearchViewController: UIViewController {
             Thread.sleep(forTimeInterval: 2)
             
             updateUI(self.searchedNews)
-            view.endEditing(true)
         }
     }
     
