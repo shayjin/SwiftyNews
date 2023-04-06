@@ -81,7 +81,6 @@ class SearchViewController: UIViewController {
                                         imageUrl: img, author: article["author"] as Any, date: article["publishedAt"] as Any, text: article["description"] as Any, url: article["url"] as! String)
                         
                         
-                        print(news)
                         self.searchedNews.append(news)
                     }
                 } catch let error {
@@ -99,11 +98,11 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func showNews(_ sender: UIButton) {
-        performSegue(withIdentifier: "showNews", sender: sender)
+        performSegue(withIdentifier: "showNews2", sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showNews" {
+        if segue.identifier == "showNews2" {
             if let destinationVC = segue.destination as? NewsViewController,
                let senderButton = sender as? UIButton {
                 destinationVC.news = self.searchedNews[senderButton.tag - 1]

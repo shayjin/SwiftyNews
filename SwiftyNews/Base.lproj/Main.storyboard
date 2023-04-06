@@ -687,6 +687,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <segue destination="lHe-BL-Dzd" kind="show" identifier="showNews2" id="SMW-iB-5OC"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -726,6 +729,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="bn2-0s-CFj" eventType="touchUpInside" id="FtD-T8-8dV"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -765,6 +771,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="bn2-0s-CFj" eventType="touchUpInside" id="dUz-AM-VXb"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -804,6 +813,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="bn2-0s-CFj" eventType="touchUpInside" id="RHi-Ce-OKx"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -843,6 +855,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="showNews:" destination="bn2-0s-CFj" eventType="touchUpInside" id="PpU-EA-kFF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1255,7 +1270,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="320" width="152" height="35"/>
+                                <rect key="frame" x="215" y="374.33333333333331" width="152" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -1469,6 +1484,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="oTw-4J-279"/>
         <segue reference="a3V-2k-cKG"/>
+        <segue reference="SMW-iB-5OC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>

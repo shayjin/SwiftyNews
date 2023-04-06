@@ -12,7 +12,7 @@ class News {
     
     let headers: HTTPHeaders = [
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-y6Du0u62apw18pLPpqNgT3BlbkFJkNSJac3uZVDxikeKda6a999"
+        "Authorization": "Bearer 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"
     ]
     
     init(title: Any, imageUrl: String, author: Any, date: Any, text: Any, url: String) {
