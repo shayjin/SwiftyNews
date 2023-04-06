@@ -14,8 +14,9 @@ class NewsViewController: UIViewController {
     @IBOutlet var convertButton: UIButton!
     
     let auth = Auth.auth()
+    let database = Database.database().reference()
     var news: News?
-    
+    var id: String = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,30 @@ class NewsViewController: UIViewController {
     
     @IBAction func like(_ sender: Any) {
         if auth.currentUser != nil {
-            
-        } else {
-            
-            
+            if self.likeButton.title(for: .normal) == "Like" {
+                self.likeButton.setTitle("Unlike", for: .normal)
+                
+                database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
+                    if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
+                        
+                        self.id = String(Int(lastChild.key)! + 1)
+                        var element = database.child("News").child(id)
+                        
+                        element.child("author").setValue(news?.author)
+                        element.child("title").setValue(news?.title)
+                        element.child("imgUrl").setValue(news?.imageUrl)
+                        element.child("url").setValue(news?.url)
+                        element.child("simplified").child("1").setValue(news?.simplifiedText[0])
+                    }
+                }) { (error) in
+                    print("Error retrieving data: \(error.localizedDescription)")
+                }
+            } else {
+                
+                database.child("News").child(self.id).removeValue()
+                
+                self.likeButton.setTitle("Like", for: .normal)
+            }
         }
     }
     
