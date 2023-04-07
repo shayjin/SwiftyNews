@@ -41,12 +41,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         
         if localNews.count <= 0 {
             getUserLocation()
+            parseLocalAndUSNews("top-headlines?country=us")
+           // parseWorldNews()
         } else {
-            updateUI(self.localNews)
+            switchNewsType((Any).self)
         }
     
-        // parseLocalAndUSNews("top-headlines?country=us")
-        // parseWorldNews()
     }
     
     @IBAction func showNews(_ sender: UIButton) {
@@ -57,7 +57,17 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "showNews" {
             if let destinationVC = segue.destination as? NewsViewController,
                let senderButton = sender as? UIButton {
-                destinationVC.news = self.localNews[senderButton.tag - 1]
+                
+                switch newsType.selectedSegmentIndex {
+                case 0:
+                    destinationVC.news = self.localNews[senderButton.tag - 1]
+                case 1:
+                    destinationVC.news = self.USNews[senderButton.tag - 1]
+                case 2:
+                    destinationVC.news = self.worldNews[senderButton.tag - 1]
+                default:
+                    destinationVC.news = self.localNews[senderButton.tag - 1]
+                }
             }
         }
     }
@@ -114,7 +124,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func parseLocalAndUSNews(_ apiArg: String) {
-        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
+        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=3&apiKey=\(apiKey)")!
         var articleList = [News]()
         var type: String
         
@@ -137,7 +147,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 
-                print(articles)
                 for article in articles {
                     var img: String
                     
@@ -155,6 +164,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     } else {
                         self.USNews.append(news)
                     }
+                    
                 }
             } catch let error {
                 print("Error parsing JSON: \(error)")
@@ -229,7 +239,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             [self.picture4, self.title4, self.button4],
             [self.picture5, self.title5, self.button5]
         ]
-    
+        
+        print(articleList)
         for i in 0...articleList.count-1 {
             UIComponnents[i][2]!.tag = i + 1
             
