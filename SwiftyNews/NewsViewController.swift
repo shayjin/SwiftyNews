@@ -16,17 +16,41 @@ class NewsViewController: UIViewController {
     let auth = Auth.auth()
     let database = Database.database().reference()
     var news: News?
-    var id: String = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         updateUI()
         
-        if auth.currentUser != nil {
+        if auth.currentUser != nil { // logged in
             
-        } else {
-
+            if let id = news?.id {
+                database.child("UserInfo").child(convertEmail(email: (auth.currentUser?.email)!)).child("LikedNews").queryOrderedByValue().queryEqual(toValue: news?.id!).observeSingleEvent(of: .value, with: { [self] (snapshot) in
+                    if snapshot.exists() {
+                        print("The key with value '\(id)' exists in Firebase")
+                        self.likeButton.setTitle("Unlike", for: .normal)
+                    } else {
+                        
+                        print("The key with value '\(id)' does not exist in Firebase")
+                        self.likeButton.setTitle("Like", for: .normal)
+                    }
+                }) { (error) in
+                    print(error.localizedDescription)
+                }
+            } else {
+                database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
+                    if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
+                        
+                        self.news?.id = String(Int(lastChild.key)! + 1)
+                        print(self.news?.id!)
+                    }
+                }) { (error) in
+                    print("Error retrieving data: \(error.localizedDescription)")
+                }
+            }
+            
+        } else { // logged off
+           self.likeButton.setTitle("Like", for: .normal)
         }
     }
     
@@ -38,6 +62,17 @@ class NewsViewController: UIViewController {
         return true
     }
     
+    func getId() {
+        database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
+            if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
+                
+                self.news?.id = String(Int(lastChild.key)! + 1)
+            }
+        }) { (error) in
+            print("Error retrieving data: \(error.localizedDescription)")
+        }
+    }
+    
     
     @IBAction func like(_ sender: Any) {
         if auth.currentUser != nil {
@@ -47,25 +82,30 @@ class NewsViewController: UIViewController {
                 database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
                     if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
                         
-                        self.id = String(Int(lastChild.key)! + 1)
-                        var element = database.child("News").child(id)
+                        var element = database.child("News").child((news?.id!)!)
                         
                         element.child("author").setValue(news?.author)
                         element.child("title").setValue(news?.title)
                         element.child("imgUrl").setValue(news?.imageUrl)
                         element.child("url").setValue(news?.url)
                         element.child("simplified").child("1").setValue(news?.simplifiedText[0])
+                        
+                        database.child("UserInfo").child(convertEmail(email: (auth.currentUser?.email)!)).child("LikedNews").child((news?.id!)!).setValue(news?.id!)
                     }
                 }) { (error) in
                     print("Error retrieving data: \(error.localizedDescription)")
                 }
             } else {
-                
-                database.child("News").child(self.id).removeValue()
+                database.child("UserInfo").child(convertEmail(email: (auth.currentUser?.email)!)).child("LikedNews").child((news?.id!)!).removeValue()
                 
                 self.likeButton.setTitle("Like", for: .normal)
             }
         }
+    }
+    
+    func convertEmail(email: String) -> String {
+        print(email.replacingOccurrences(of: ".", with: ","))
+        return email.replacingOccurrences(of: ".", with: ",")
     }
     
     

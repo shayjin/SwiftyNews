@@ -9,6 +9,7 @@ class News {
     var originalText: Any
     var simplifiedText: [String]
     var url: String
+    var id: String?
     
     let headers: HTTPHeaders = [
         "Content-Type": "application/json",
