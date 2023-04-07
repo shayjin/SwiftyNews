@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if localNews.count <= 0 {
             getUserLocation()
             parseLocalAndUSNews("top-headlines?country=us")
-           // parseWorldNews()
+            parseWorldNews()
         } else {
             switchNewsType((Any).self)
         }
@@ -171,9 +171,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        Thread.sleep(forTimeInterval: 2)
+        Thread.sleep(forTimeInterval: 0.5)
         task.resume()
-        Thread.sleep(forTimeInterval: 2)
+        Thread.sleep(forTimeInterval: 0.5)
     }
     
     
@@ -225,9 +225,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     print("Error parsing JSON: \(error)")
                 }
             }
-            Thread.sleep(forTimeInterval: 2)
+            Thread.sleep(forTimeInterval: 0.5)
             task.resume()
-            Thread.sleep(forTimeInterval: 2)
+            Thread.sleep(forTimeInterval: 0.5)
         }
     }
     

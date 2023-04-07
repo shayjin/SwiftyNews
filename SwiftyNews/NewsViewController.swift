@@ -137,19 +137,15 @@ class NewsViewController: UIViewController {
         self.content.isEditable = false
         
 
+            news!.simplifiedText[0] = news!.simplifiedText[0]!.trimmingCharacters(in: .newlines)
+            self.content.text = "📌  \(news!.simplifiedText[0]!). "
         
-        if news!.simplifiedText[0].count != 0 {
-            news!.simplifiedText[0] = news!.simplifiedText[0].trimmingCharacters(in: .newlines)
-            self.content.text = "📌  \(news!.simplifiedText[0]). "
+        for i in 1...(news?.simplifiedText.count)!-1 {
+                self.content.text! += "\n\n📌 \(news!.simplifiedText[i]!). "
+            
         }
 
         
-        if news!.simplifiedText[1].count != 0 {
-            self.content.text! += "\n\n📌 \(news!.simplifiedText[1]). "
-        }
-        
-        if news!.simplifiedText[2].count != 0 {
-            self.content.text! += "\n\n📌 \(news!.simplifiedText[2]). "
-        }
+
     }
 }

@@ -7,7 +7,7 @@ class News {
     var author: Any
     var date: Any
     var originalText: Any
-    var simplifiedText: [String]
+    var simplifiedText: [String?]
     var url: String
     var id: String?
     
