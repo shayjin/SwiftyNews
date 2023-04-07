@@ -41,8 +41,8 @@ class NewsViewController: UIViewController {
                 database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
                     if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
                         
+                        self.likeButton.setTitle("Like", for: .normal)
                         self.news?.id = String(Int(lastChild.key)! + 1)
-                        print(self.news?.id!)
                     }
                 }) { (error) in
                     print("Error retrieving data: \(error.localizedDescription)")
@@ -62,21 +62,12 @@ class NewsViewController: UIViewController {
         return true
     }
     
-    func getId() {
-        database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
-            if let lastChild = snapshot.children.allObjects.last as? DataSnapshot {
-                
-                self.news?.id = String(Int(lastChild.key)! + 1)
-            }
-        }) { (error) in
-            print("Error retrieving data: \(error.localizedDescription)")
-        }
-    }
-    
     
     @IBAction func like(_ sender: Any) {
         if auth.currentUser != nil {
+            print("hi1")
             if self.likeButton.title(for: .normal) == "Like" {
+                print("2")
                 self.likeButton.setTitle("Unlike", for: .normal)
                 
                 database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
@@ -104,7 +95,6 @@ class NewsViewController: UIViewController {
     }
     
     func convertEmail(email: String) -> String {
-        print(email.replacingOccurrences(of: ".", with: ","))
         return email.replacingOccurrences(of: ".", with: ",")
     }
     

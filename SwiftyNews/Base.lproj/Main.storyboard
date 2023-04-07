@@ -1431,7 +1431,7 @@
             <objects>
                 <viewController storyboardIdentifier="edit" id="eZP-Pa-ifT" customClass="EditProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AC3-NB-FJ1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-D3-mik">
@@ -1486,9 +1486,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oTw-4J-279"/>
+        <segue reference="amc-9R-CbH"/>
         <segue reference="IEv-sB-rI2"/>
-        <segue reference="SMW-iB-5OC"/>
+        <segue reference="9jg-hg-Be9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
