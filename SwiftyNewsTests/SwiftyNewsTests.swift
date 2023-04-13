@@ -1,10 +1,3 @@
-//
-//  SwiftyNewsTests.swift
-//  SwiftyNewsTests
-//
-//  Created by Shay on 2/22/23.
-//
-
 import XCTest
 @testable import SwiftyNews
 
@@ -33,4 +26,23 @@ class SwiftyNewsTests: XCTestCase {
         }
     }
 
+    func testGetUserLocationAndConvertStateName() throws {
+        let vc = HomeViewController()
+        
+        vc.getUserLocation()
+        XCTAssertEqual(vc.userLocation, "Columbus+Ohio", "Not equal")
+    }
+    
+    func testConvertEmail() throws {
+        let vc = NewsViewController()
+        
+        var actual = vc.convertEmail(email: "shin.810@osu.edu")
+        XCTAssertEqual("shin,810@osu,edu", actual)
+        
+        actual = vc.convertEmail(email: "champion_adam@gmail.com")
+        XCTAssertEqual("champion_adam@gmail,com", actual)
+        
+        actual = vc.convertEmail(email: "1.2.,3.as,f.da.bas,dcda.,s@gmail.com")
+        XCTAssertEqual("1,2,,3,as,f.da,bas,dcda,,s@gmail,com", actual)
+    }
 }
