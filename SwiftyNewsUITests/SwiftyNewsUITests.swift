@@ -22,13 +22,43 @@ class SwiftyNewsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testChangingTab() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        app.tabBars.buttons["Profile"].tap()
+        XCTAssertTrue(app.tabBars.buttons["Profile"].isSelected)
+        
+        app.tabBars.buttons["Search"].tap()
+        XCTAssertTrue(app.tabBars.buttons["Search"].isSelected)
+        
+        app.tabBars.buttons["Home"].tap()
+        XCTAssertTrue(app.tabBars.buttons["Home"].isSelected)
     }
+    
+    func testLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        // 해야함
+    }
+    
+    func testChangingNewsType() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let segmentControl = app.segmentedControls["newsType"]
+
+        segmentControl.buttons.element(boundBy: 3).tap()
+        XCTAssertTrue(segmentControl.buttons.element(boundBy: 3).isSelected)
+        
+        segmentControl.buttons.element(boundBy: 2).tap()
+        XCTAssertTrue(segmentControl.buttons.element(boundBy: 2).isSelected)
+        
+        segmentControl.buttons.element(boundBy: 1).tap()
+        XCTAssertTrue(segmentControl.buttons.element(boundBy: 1).isSelected)
+    }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
