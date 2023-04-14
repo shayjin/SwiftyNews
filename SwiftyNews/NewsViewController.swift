@@ -65,9 +65,7 @@ class NewsViewController: UIViewController {
     
     @IBAction func like(_ sender: Any) {
         if auth.currentUser != nil {
-            print("hi1")
             if self.likeButton.title(for: .normal) == "Like" {
-                print("2")
                 self.likeButton.setTitle("Unlike", for: .normal)
                 
                 database.child("News").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: { [self] (snapshot) in
@@ -97,7 +95,6 @@ class NewsViewController: UIViewController {
     func convertEmail(email: String) -> String {
         return email.replacingOccurrences(of: ".", with: ",")
     }
-    
     
     @IBAction func convertText(_ sender: Any) {
         if let url = URL(string: news!.url) {

@@ -179,7 +179,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     func parseWorldNews() {
         var articleList = [News]()
-        let countries = ["ae", "ar", "gr", "kr", "jp"]
+        let countries = randomizeCountries()
         
         for country in countries {
             let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&pageSize=1&apiKey=\(apiKey)"
@@ -330,5 +330,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if states[state] != nil {
             self.userLocation! += "+\(states[state]!)"
         }
+    }
+    
+    func randomizeCountries() -> [String]{
+        let countries = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"]
+        
+        
+        var selectedCountries: [String] = []
+
+        for i in 1...5 {
+            let randomIndex = Int.random(in: 0..<countries.count)
+            selectedCountries.append(countries[randomIndex])
+        }
+        
+        return selectedCountries
     }
 }
