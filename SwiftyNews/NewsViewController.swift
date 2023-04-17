@@ -137,7 +137,7 @@ class NewsViewController: UIViewController {
             news!.simplifiedText[0] = news!.simplifiedText[0]!.trimmingCharacters(in: .newlines)
             self.content.text = "📌  \(news!.simplifiedText[0]!). "
         
-        for i in 1...(news?.simplifiedText.count)!-1 {
+        for i in 0...(news?.simplifiedText.count)!-1 {
                 self.content.text! += "\n\n📌 \(news!.simplifiedText[i]!). "
             
         }

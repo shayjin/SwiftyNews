@@ -8,7 +8,7 @@ import Alamofire
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
+    let apiKey = "e1f7c16be88846ac8c9de7a3e82eae53"
     
     var userLocation: String? = nil
     var localNews = [News]()
@@ -35,9 +35,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
                 
+        self.newsType.accessibilityIdentifier = "newsType"
         self.newsType.setTitle("Local", forSegmentAt: 0)
         self.newsType.setTitle("US", forSegmentAt: 1)
         self.newsType.setTitle("World", forSegmentAt: 2)
+        
         
         if localNews.count <= 0 {
             getUserLocation()
@@ -124,7 +126,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func parseLocalAndUSNews(_ apiArg: String) {
-        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=3&apiKey=\(apiKey)")!
+        let url = URL(string: "https://newsapi.org/v2/\(apiArg)&pageSize=5&apiKey=\(apiKey)")!
         var articleList = [News]()
         var type: String
         
@@ -147,7 +149,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 
+                print("what")
                 for article in articles {
+                    print(article)
                     var img: String
                     
                     if let myString = article["urlToImage"] as? String {
@@ -240,7 +244,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             [self.picture5, self.title5, self.button5]
         ]
         
-        print(articleList)
         for i in 0...articleList.count-1 {
             UIComponnents[i][2]!.tag = i + 1
             
@@ -273,7 +276,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func convertStateName(_ state: String) {
+    func convertStateName(_ state: String) -> String {
         let states = [
             "AL": "Alabama",
             "AK": "Alaska",
@@ -330,6 +333,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         if states[state] != nil {
             self.userLocation! += "+\(states[state]!)"
         }
+        
+        return states[state]!
     }
     
     func randomizeCountries() -> [String]{

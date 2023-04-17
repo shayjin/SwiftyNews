@@ -26,6 +26,7 @@ class SwiftyNewsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
+        
         app.tabBars.buttons["Profile"].tap()
         XCTAssertTrue(app.tabBars.buttons["Profile"].isSelected)
         
@@ -49,23 +50,13 @@ class SwiftyNewsUITests: XCTestCase {
         
         let segmentControl = app.segmentedControls["newsType"]
 
-        segmentControl.buttons.element(boundBy: 3).tap()
-        XCTAssertTrue(segmentControl.buttons.element(boundBy: 3).isSelected)
-        
         segmentControl.buttons.element(boundBy: 2).tap()
         XCTAssertTrue(segmentControl.buttons.element(boundBy: 2).isSelected)
         
         segmentControl.buttons.element(boundBy: 1).tap()
         XCTAssertTrue(segmentControl.buttons.element(boundBy: 1).isSelected)
-    }
-    
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        
+        segmentControl.buttons.element(boundBy: 0).tap()
+        XCTAssertTrue(segmentControl.buttons.element(boundBy: 0).isSelected)
     }
 }

@@ -36,10 +36,29 @@ class ProfileViewController: UIViewController {
     @IBOutlet var logOutButton: UIButton!
     @IBOutlet var editProfileButton: UIButton!
     
+    @IBOutlet var likedArticlesLabel: UILabel!
     @IBOutlet var statusLogo: UILabel!
+    @IBOutlet var scrollView: UIScrollView!
+    
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var picture1: UIImageView!
+    @IBOutlet var title1: UILabel!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var picture2: UIImageView!
+    @IBOutlet var title2: UILabel!
+    @IBOutlet var picture3: UIImageView!
+    @IBOutlet var button3: UIButton!
+    @IBOutlet var title3: UILabel!
+    @IBOutlet var button4: UIButton!
+    @IBOutlet var picture4: UIImageView!
+    @IBOutlet var title4: UILabel!
+    @IBOutlet var button5: UIButton!
+    @IBOutlet var picture5: UIImageView!
+    @IBOutlet var title5: UILabel!
     
     let auth = Auth.auth()
     let database = Database.database().reference()
+    var likedNews: [News] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +91,7 @@ class ProfileViewController: UIViewController {
     func enable(page: String) {
         let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton, likedArticlesLabel, scrollView]
         
         if (page == "login") {
             for element in loginElements {
@@ -110,9 +129,16 @@ class ProfileViewController: UIViewController {
             for element in profileElements {
                 element!.isHidden = false
             }
+            
+            
         }
     }
-
+    
+    
+    func convertEmail(email: String) -> String {
+        return email.replacingOccurrences(of: ".", with: ",")
+    }
+    
     @IBAction func goToSignUpPage(_ sender: UIButton) {
         emailTextField.text = ""
         nameTextField.text = ""
