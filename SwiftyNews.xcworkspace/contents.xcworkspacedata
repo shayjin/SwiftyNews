@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/shay/Desktop/SwiftyNews/SwiftyNews/LikedNewsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:SwiftyNews.xcodeproj">
    </FileRef>
    <FileRef

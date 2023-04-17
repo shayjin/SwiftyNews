@@ -38,7 +38,6 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var statusLogo: UILabel!
 
-    @IBOutlet var likedArticlesButton: UIButton!
     
     let auth = Auth.auth()
     let database = Database.database().reference()
@@ -78,7 +77,7 @@ class ProfileViewController: UIViewController {
     func enable(page: String) {
         let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton, likedArticlesButton]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton]
         
         if (page == "login") {
             for element in loginElements {

@@ -65,7 +65,7 @@ class News {
                 print(error)
             }
         }
-        Thread.sleep(forTimeInterval: 2)
+        //Thread.sleep(forTimeInterval: 2)
         return self.simplifiedText
     }
     
