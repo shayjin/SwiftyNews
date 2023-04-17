@@ -8,7 +8,7 @@ import Alamofire
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "e1f7c16be88846ac8c9de7a3e82eae53"
+    let apiKey = "6165d99f329f4996977bb4d7495c0940"
     
     var userLocation: String? = nil
     var localNews = [News]()

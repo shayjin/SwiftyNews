@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import CoreLocation
 
 class SwiftyNewsUITests: XCTestCase {
 
@@ -41,7 +42,26 @@ class SwiftyNewsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        // 해야함
+        app.tabBars.buttons["Profile"].tap()
+        
+        XCTAssertTrue(app.tabBars.buttons["Profile"].isSelected)
+        
+        if "Profile" == app.staticTexts["status"].label {
+            app.buttons["logout"].tap()
+        }
+    
+        var username = app.textFields["username"]
+        username.tap()
+        username.typeText("shin.810@osu.edu")
+        
+        var password = app.textFields["password"]
+        password.tap()
+        password.typeText("abc123")
+        
+        app.buttons["login"].tap()
+        app.buttons["logout"].tap()
+        
+        XCTAssertEqual("Log In", app.staticTexts["status"].label, "error")
     }
     
     func testChangingNewsType() throws {
@@ -59,4 +79,5 @@ class SwiftyNewsUITests: XCTestCase {
         segmentControl.buttons.element(boundBy: 0).tap()
         XCTAssertTrue(segmentControl.buttons.element(boundBy: 0).isSelected)
     }
+
 }

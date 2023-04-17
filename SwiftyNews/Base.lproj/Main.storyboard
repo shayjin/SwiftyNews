@@ -1226,8 +1226,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-MJ-I9a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-MJ-I9a">
                                 <rect key="frame" x="120" y="91" width="135" height="25.333333333333329"/>
+                                <accessibility key="accessibilityConfiguration" identifier="status"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1240,6 +1241,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
                                 <rect key="frame" x="25" y="165" width="325" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1251,11 +1253,13 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
                                 <rect key="frame" x="25" y="260" width="325" height="33"/>
+                                <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
                                 <rect key="frame" x="25" y="333" width="325" height="35"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                 <connections>
@@ -1274,7 +1278,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="180.66666666666663" width="151.66666666666663" height="34.333333333333371"/>
+                                <rect key="frame" x="215" y="375" width="151.66666666666663" height="34.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -1283,6 +1287,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Yn-ITk">
                                 <rect key="frame" x="52" y="294" width="112" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="logout"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log Out"/>
                                 <connections>
@@ -1495,8 +1500,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a3V-2k-cKG"/>
-        <segue reference="SMW-iB-5OC"/>
+        <segue reference="IEv-sB-rI2"/>
+        <segue reference="9jg-hg-Be9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="32" height="32"/>
