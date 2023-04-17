@@ -38,23 +38,7 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var likedArticlesLabel: UILabel!
     @IBOutlet var statusLogo: UILabel!
-    @IBOutlet var scrollView: UIScrollView!
-    
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var picture1: UIImageView!
-    @IBOutlet var title1: UILabel!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var picture2: UIImageView!
-    @IBOutlet var title2: UILabel!
-    @IBOutlet var picture3: UIImageView!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var title3: UILabel!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var picture4: UIImageView!
-    @IBOutlet var title4: UILabel!
-    @IBOutlet var button5: UIButton!
-    @IBOutlet var picture5: UIImageView!
-    @IBOutlet var title5: UILabel!
+
     
     let auth = Auth.auth()
     let database = Database.database().reference()
@@ -62,6 +46,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.endEditing(true)
         self.navigationItem.hidesBackButton = true
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
             view.addGestureRecognizer(tapGesture)
@@ -85,13 +70,15 @@ class ProfileViewController: UIViewController {
         } else {
             statusLogo.text = "Log In"
             enable(page: "login")
+            self.loginUsernameTextField.text = ""
+            self.loginPasswordTextField.text = ""
         }
     }
     
     func enable(page: String) {
         let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
-        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton, likedArticlesLabel, scrollView]
+        let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton, likedArticlesLabel]
         
         if (page == "login") {
             for element in loginElements {
@@ -172,6 +159,9 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+            view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func login(_ sender: Any) {
@@ -185,6 +175,9 @@ class ProfileViewController: UIViewController {
                 self!.viewDidLoad()
             }
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+            view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func logOut(_ sender: UIButton) {
