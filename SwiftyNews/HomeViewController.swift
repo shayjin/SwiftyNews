@@ -37,13 +37,14 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         loading(label: loadingLabel)
         hideComponents()
+        
         super.viewDidAppear(animated)
 
         self.newsType.accessibilityIdentifier = "newsType"
 
         if localNews.count <= 0 {
             getUserLocation()
-            //parseLocalAndUSNews("top-headlines?country=us")
+                //parseLocalAndUSNews("top-headlines?country=us")
                 // parseWorldNews()
         } else {
             switchNewsType((Any).self)

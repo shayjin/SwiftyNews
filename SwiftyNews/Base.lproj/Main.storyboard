@@ -22,13 +22,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="sof-MR-BRf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLM-Uk-ZmU">
-                                <rect key="frame" x="20" y="188" width="335" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="188" width="335" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,7 +43,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -136,11 +136,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftyNews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Por-Kc-9kK">
-                                <rect key="frame" x="105.66666666666669" y="91" width="179" height="59"/>
+                                <rect key="frame" x="109.33333333333333" y="91" width="171.33333333333337" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="WOn-EA-RcQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -187,7 +187,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="G2w-YZ-suS"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -230,7 +230,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="9lc-lp-MaR"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -260,7 +260,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="egL-s7-J4A"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -308,7 +308,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="rAF-hh-ni3"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -347,7 +347,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="Yhl-ud-qKK"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -532,8 +532,8 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading articles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZC-dd-Sx1">
-                                <rect key="frame" x="128" y="391" width="134.33333333333337" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="133.33333333333334" y="391" width="123.66666666666666" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -643,11 +643,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftyNews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vw-sz-SEK">
-                                <rect key="frame" x="98" y="91" width="179" height="59"/>
+                                <rect key="frame" x="102.00000000000001" y="91" width="171.33333333333337" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="sD3-tj-xAd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -692,7 +692,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="BZm-4J-XwJ"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -734,7 +734,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="CNu-qe-jnC"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -776,7 +776,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="gDr-DH-lmU"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -818,7 +818,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="bIx-s3-esQ"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -860,7 +860,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="9MZ-Yw-dS0"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1180,24 +1180,24 @@
             <objects>
                 <viewController storyboardIdentifier="profile" title="ProfileController" id="zSA-di-Jmq" customClass="ProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z8a-lW-UyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1y-Fw-9Ol">
-                                <rect key="frame" x="25" y="327.33333333333331" width="73.333333333333329" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="25" y="335.33333333333331" width="67.333333333333329" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqf-ZH-JPv">
-                                <rect key="frame" x="24.999999999999996" y="138.66666666666666" width="40.666666666666657" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="25" y="130.66666666666666" width="39" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05P-TQ-PMy">
-                                <rect key="frame" x="25" y="233" width="45" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="25.000000000000004" y="233" width="42.333333333333343" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1207,22 +1207,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dN-pF-0ef">
-                                <rect key="frame" x="25" y="263.33333333333331" width="325" height="34"/>
+                                <rect key="frame" x="25" y="271.33333333333331" width="325" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-tr-Xwh">
-                                <rect key="frame" x="25" y="357.66666666666669" width="325" height="34"/>
+                                <rect key="frame" x="25" y="373.66666666666669" width="325" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-fX-lJz">
-                                <rect key="frame" x="25" y="452" width="325" height="34"/>
+                                <rect key="frame" x="25" y="476" width="325" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjn-CW-sM4">
-                                <rect key="frame" x="25" y="526" width="325" height="34.333333333333371"/>
+                                <rect key="frame" x="25" y="550" width="325" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                 <connections>
@@ -1230,44 +1230,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retype Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vip-2h-XV6">
-                                <rect key="frame" x="25" y="421.66666666666669" width="131.33333333333334" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="25.000000000000007" y="437.66666666666669" width="120.66666666666669" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-MJ-I9a">
-                                <rect key="frame" x="120" y="91" width="135" height="25.333333333333329"/>
+                                <rect key="frame" x="120" y="47" width="135" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="status"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
-                                <rect key="frame" x="24.999999999999993" y="134" width="78.333333333333314" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
+                                <rect key="frame" x="25" y="43" width="72.666666666666671" height="28.333333333333329"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
-                                <rect key="frame" x="25" y="165" width="325" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
+                                <rect key="frame" x="25" y="81.333333333333329" width="325" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
-                                <rect key="frame" x="25" y="229" width="73.333333333333329" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
+                                <rect key="frame" x="25" y="145.33333333333331" width="67.333333333333329" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
-                                <rect key="frame" x="25" y="260" width="325" height="33"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
+                                <rect key="frame" x="25" y="183.66666666666666" width="325" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
-                                <rect key="frame" x="25" y="333" width="325" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
+                                <rect key="frame" x="25" y="257.66666666666669" width="325" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="login"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
@@ -1276,7 +1276,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-bQ-Y93">
-                                <rect key="frame" x="25" y="391" width="150" height="4"/>
+                                <rect key="frame" x="25" y="308" width="150" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="zUi-V4-hMM"/>
                                 </constraints>
@@ -1287,7 +1287,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="375" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="215" y="346.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -1304,7 +1304,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svh-Ca-3jC">
-                                <rect key="frame" x="25" y="590.33333333333337" width="325" height="34.333333333333371"/>
+                                <rect key="frame" x="25" y="614.33333333333337" width="325" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Log In"/>
                                 <connections>
@@ -1317,27 +1317,27 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Edit Profile"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbJ-um-HRe">
-                                <rect key="frame" x="82" y="241.66666666666666" width="49.666666666666657" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="82" y="233.66666666666666" width="46" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elb-AU-bxs">
-                                <rect key="frame" x="82" y="189.33333333333334" width="54" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="82" y="173.33333333333334" width="49.333333333333343" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHP-qg-3g0">
-                                <rect key="frame" x="170" y="188" width="166" height="21"/>
+                                <rect key="frame" x="170" y="178" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da7-SW-nGP">
-                                <rect key="frame" x="170" y="241" width="166" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da7-SW-nGP">
+                                <rect key="frame" x="170" y="233.66666666666666" width="38" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1393,11 +1393,11 @@
                             <constraint firstItem="WaN-cT-GyE" firstAttribute="leading" secondItem="Iqf-ZH-JPv" secondAttribute="leading" id="b44-n6-YOQ"/>
                             <constraint firstItem="bhV-7L-bRG" firstAttribute="top" secondItem="jM0-10-OEB" secondAttribute="bottom" constant="40" id="cXC-ph-FzI"/>
                             <constraint firstItem="WaN-cT-GyE" firstAttribute="top" secondItem="Iqf-ZH-JPv" secondAttribute="bottom" constant="10" id="gBs-CI-nvL"/>
+                            <constraint firstItem="Da7-SW-nGP" firstAttribute="leading" secondItem="CbJ-um-HRe" secondAttribute="trailing" constant="42" id="gSi-XD-rRf"/>
                             <constraint firstItem="WaN-cT-GyE" firstAttribute="leading" secondItem="vip-2h-XV6" secondAttribute="leading" id="hbW-hQ-d4O"/>
                             <constraint firstItem="3dN-pF-0ef" firstAttribute="leading" secondItem="kd7-zT-rZM" secondAttribute="leading" constant="25" id="iLU-so-JGA"/>
                             <constraint firstItem="bhV-7L-bRG" firstAttribute="leading" secondItem="kd7-zT-rZM" secondAttribute="leading" constant="25" id="jkk-Y9-vMw"/>
                             <constraint firstItem="kd7-zT-rZM" firstAttribute="trailing" secondItem="jM0-10-OEB" secondAttribute="trailing" constant="25" id="kr7-8I-qdy"/>
-                            <constraint firstItem="Da7-SW-nGP" firstAttribute="leading" secondItem="CbJ-um-HRe" secondAttribute="trailing" constant="38" id="mCL-Qq-tZk"/>
                             <constraint firstItem="vip-2h-XV6" firstAttribute="top" secondItem="M2c-tr-Xwh" secondAttribute="bottom" constant="30" id="mkQ-ms-N6b"/>
                             <constraint firstItem="WaN-cT-GyE" firstAttribute="top" secondItem="Z8a-lW-UyL" secondAttribute="top" constant="169" id="omG-8k-eqD"/>
                             <constraint firstItem="WaN-cT-GyE" firstAttribute="leading" secondItem="05P-TQ-PMy" secondAttribute="leading" id="p1p-2u-sAi"/>
@@ -1460,9 +1460,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-D3-mik">
-                                <rect key="frame" x="16" y="158" width="41" height="21"/>
+                                <rect key="frame" x="16" y="158" width="39" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1473,9 +1473,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Mz-hC-90q">
-                                <rect key="frame" x="16" y="259" width="45" height="21"/>
+                                <rect key="frame" x="16" y="259" width="43" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1511,8 +1511,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IEv-sB-rI2"/>
-        <segue reference="9jg-hg-Be9"/>
+        <segue reference="OUu-Pa-P4f"/>
+        <segue reference="SMW-iB-5OC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
