@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet var loginPasswordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var createAccountButton: UIButton!
-    @IBOutlet var forgotPasswordButtonn: UIButton!
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
@@ -76,7 +75,7 @@ class ProfileViewController: UIViewController {
     }
     
     func enable(page: String) {
-        let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton, forgotPasswordButtonn]
+        let loginElements = [loginUsernameLabel, loginUsernameTextField, loginPasswordLabel, loginPasswordTextField, loginButton, createAccountButton]
         let signUpElements = [emailTextField, nameTextField, passwordTextField, retypePasswordTextField, signUpButton, signUpLogInButton, emailLabel, nameLabel, passwordLabel, retypePasswordLabel]
         let profileElements = [profileNameLabel, profileEmailLabel, profileNameNameLabel, profileEmailEmailLabel,logOutButton, editProfileButton]
         
@@ -104,6 +103,9 @@ class ProfileViewController: UIViewController {
             for element in profileElements {
                 element!.isHidden = true
             }
+            
+            self.passwordTextField.isSecureTextEntry = true
+            self.retypePasswordTextField.isSecureTextEntry = true
         } else if (page == "profile") {
             for element in loginElements {
                 element!.isHidden = true
