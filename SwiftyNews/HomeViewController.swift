@@ -31,16 +31,15 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var button5: UIButton!
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
+    let label = UILabel()
     
     override func viewDidAppear(_ animated: Bool) {
+        hideComponents()
+        loading(label: label)
         super.viewDidAppear(animated)
-                
+
         self.newsType.accessibilityIdentifier = "newsType"
-        self.newsType.setTitle("Local", forSegmentAt: 0)
-        self.newsType.setTitle("US", forSegmentAt: 1)
-        self.newsType.setTitle("World", forSegmentAt: 2)
-        
-        
+
         if localNews.count <= 0 {
             getUserLocation()
             parseLocalAndUSNews("top-headlines?country=us")
@@ -48,7 +47,36 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             switchNewsType((Any).self)
         }
+    }
     
+    func hideComponents() {
+        let comps = [newsType, button1, picture1, title1, button2, picture2, title2, button3, picture3, title3, button4, picture4, title4, button5, picture5, title5]
+        
+        for comp in comps {
+            comp?.isHidden = true
+        }
+    }
+    
+    func showComponents() {
+        let comps = [newsType, button1, picture1, title1, button2, picture2, title2, button3, picture3, title3, button4, picture4, title4, button5, picture5, title5]
+        
+        for comp in comps {
+            comp?.isHidden = false
+        }
+    }
+    
+    func loading(label: UILabel) {
+        label.text = "Getting articles..."
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+    
+    func remove(label: UILabel) {
+        label.isHidden = true
     }
     
     @IBAction func showNews(_ sender: UIButton) {
@@ -244,6 +272,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             [self.picture5, self.title5, self.button5]
         ]
         
+        showComponents()
+        
         for i in 0...articleList.count-1 {
             UIComponnents[i][2]!.tag = i + 1
             
@@ -274,6 +304,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             imageView.layer.masksToBounds = true
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
+        
+        remove(label: label)
     }
     
     func convertStateName(_ state: String) -> String {
