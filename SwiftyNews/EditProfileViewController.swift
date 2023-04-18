@@ -12,6 +12,9 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
+            view.addGestureRecognizer(tapGesture)
+        
         emailTextField.text = Auth.auth().currentUser?.email
         nameTextField.text = auth.currentUser?.displayName
         
