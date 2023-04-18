@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IU-JD-3no" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3570.4000000000001" y="1427.5862068965519"/>
+            <point key="canvasLocation" x="-3052" y="1414"/>
         </scene>
         <!--HomeController-->
         <scene sceneID="tne-QT-ifu">
@@ -276,9 +276,8 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-rh-Ndu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="110"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-rh-Ndu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="110"/>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -286,15 +285,27 @@
                                                                     <action selector="showNews:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAn-8D-kvI"/>
                                                                 </connections>
                                                             </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading articles..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb2-uq-yAb">
+                                                                <rect key="frame" x="100" y="0.0" width="190" height="28.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstItem="gQM-VX-WMY" firstAttribute="top" secondItem="G4y-BT-g3g" secondAttribute="top" constant="15" id="7Ou-dV-UkS"/>
+                                                            <constraint firstItem="V1m-rh-Ndu" firstAttribute="leading" secondItem="G4y-BT-g3g" secondAttribute="leading" id="RbK-Hb-2B6"/>
                                                             <constraint firstItem="gQM-VX-WMY" firstAttribute="leading" secondItem="G4y-BT-g3g" secondAttribute="leading" constant="8" id="Th1-g6-KX6"/>
                                                             <constraint firstItem="BiG-cu-ito" firstAttribute="leading" secondItem="gQM-VX-WMY" secondAttribute="trailing" constant="8" symbolic="YES" id="UaF-RJ-axd"/>
+                                                            <constraint firstItem="Xb2-uq-yAb" firstAttribute="top" secondItem="G4y-BT-g3g" secondAttribute="top" id="cSx-bA-G2f"/>
                                                             <constraint firstItem="BiG-cu-ito" firstAttribute="top" secondItem="gQM-VX-WMY" secondAttribute="top" id="dpJ-WL-eIR"/>
+                                                            <constraint firstItem="Xb2-uq-yAb" firstAttribute="leading" secondItem="G4y-BT-g3g" secondAttribute="leading" constant="100" id="gAU-Tq-phL"/>
                                                             <constraint firstAttribute="trailing" secondItem="BiG-cu-ito" secondAttribute="trailing" constant="8" id="hYq-LM-I8e"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Xb2-uq-yAb" secondAttribute="trailing" constant="100" id="htp-YG-myw"/>
                                                             <constraint firstAttribute="bottom" secondItem="gQM-VX-WMY" secondAttribute="bottom" constant="15" id="iaY-VB-OqI"/>
+                                                            <constraint firstItem="Xb2-uq-yAb" firstAttribute="top" secondItem="V1m-rh-Ndu" secondAttribute="top" id="lfY-7w-iyo"/>
+                                                            <constraint firstItem="V1m-rh-Ndu" firstAttribute="centerY" secondItem="BiG-cu-ito" secondAttribute="centerY" id="zRe-TT-oRU"/>
                                                         </constraints>
                                                     </view>
                                                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjg-ZE-Mho">
@@ -546,8 +557,8 @@
                                     <constraint firstAttribute="trailing" secondItem="0Mq-kD-yMf" secondAttribute="trailing" id="yOG-QJ-evP"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading articles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZC-dd-Sx1">
-                                <rect key="frame" x="133.33333333333334" y="391" width="123.66666666666666" height="28.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow location access to use this app!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZC-dd-Sx1">
+                                <rect key="frame" x="64.666666666666657" y="391" width="260.66666666666674" height="28.333333333333314"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -580,6 +591,7 @@
                         <outlet property="button4" destination="GPL-ns-wmL" id="74v-ho-vY0"/>
                         <outlet property="button5" destination="0As-FN-Bgg" id="gpY-te-Jju"/>
                         <outlet property="loadingLabel" destination="NZC-dd-Sx1" id="jNc-a4-M2j"/>
+                        <outlet property="loadingLabel2" destination="Xb2-uq-yAb" id="ImH-Z2-A9b"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                         <outlet property="picture1" destination="AA2-d4-LXG" id="xz0-yD-2uO"/>
                         <outlet property="picture2" destination="8zZ-C6-cWH" id="1eB-jo-ATb"/>
@@ -647,7 +659,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqA-QE-aav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="606"/>
+            <point key="canvasLocation" x="-439" y="568"/>
         </scene>
         <!--SearchController-->
         <scene sceneID="Ip1-jO-udH">
@@ -1200,7 +1212,7 @@
             <objects>
                 <viewController storyboardIdentifier="profile" title="ProfileController" id="zSA-di-Jmq" customClass="ProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z8a-lW-UyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1y-Fw-9Ol">
@@ -1256,37 +1268,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-MJ-I9a">
-                                <rect key="frame" x="120" y="47" width="135" height="35"/>
+                                <rect key="frame" x="120" y="91" width="135" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="status"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
                                 <rect key="frame" x="25" y="134" width="72.666666666666671" height="28.333333333333343"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
                                 <rect key="frame" x="25" y="172.33333333333334" width="325" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
-                                <rect key="frame" x="25" y="236.33333333333331" width="67.333333333333329" height="28.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
+                                <rect key="frame" x="25" y="236.33333333333334" width="67.333333333333329" height="28.333333333333343"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
-                                <rect key="frame" x="25" y="274.66666666666674" width="325" height="18.333333333333314"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
+                                <rect key="frame" x="25" y="274.66666666666669" width="325" height="18.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
                                 <rect key="frame" x="25" y="333" width="325" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="login"/>
                                 <state key="normal" title="Button"/>
@@ -1296,7 +1308,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-bQ-Y93">
-                                <rect key="frame" x="25" y="308" width="150" height="113"/>
+                                <rect key="frame" x="25" y="391" width="150" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="zUi-V4-hMM"/>
                                 </constraints>
@@ -1307,7 +1319,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="346.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="215" y="320.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -1472,14 +1484,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcb-Xp-F06" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385.60000000000002" y="1338.1773399014778"/>
+            <point key="canvasLocation" x="-375" y="1339"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="UfH-x3-WKt">
             <objects>
                 <viewController storyboardIdentifier="edit" id="eZP-Pa-ifT" customClass="EditProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AC3-NB-FJ1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-D3-mik">
@@ -1530,12 +1542,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ms4-CQ-hSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="1339"/>
+            <point key="canvasLocation" x="569" y="1338"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="DHM-lk-eJD"/>
-        <segue reference="OUu-Pa-P4f"/>
+        <segue reference="IEv-sB-rI2"/>
         <segue reference="9jg-hg-Be9"/>
     </inferredMetricsTieBreakers>
     <resources>

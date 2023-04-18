@@ -8,7 +8,7 @@ import Alamofire
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "dae337b887dd49faaa30b9d48d41adea"
+    let apiKey = "06f9dc5e275848799b55eb8d315c25f4"
     
     var userLocation: String? = nil
     var localNews = [News]()
@@ -33,9 +33,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var title5: UILabel!
 
     @IBOutlet var loadingLabel: UILabel!
+    @IBOutlet var loadingLabel2: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         loading(label: loadingLabel)
+        loading(label: loadingLabel2)
         hideComponents()
         
         super.viewDidAppear(animated)
@@ -68,6 +70,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func loading(label: UILabel) {
+        label.text = "Loading articles..."
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
@@ -307,6 +310,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         remove(label: loadingLabel)
+        remove(label: loadingLabel2)
     }
     
     func convertStateName(_ state: String) -> String {
