@@ -1252,7 +1252,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
-                                <rect key="frame" x="25" y="260" width="325" height="34"/>
+                                <rect key="frame" x="25" y="260" width="325" height="33"/>
                                 <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1404,25 +1404,6 @@
                             <constraint firstItem="Us1-bQ-Y93" firstAttribute="top" secondItem="bhV-7L-bRG" secondAttribute="bottom" constant="23" id="yDC-os-vnm"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="e1y-Fw-9Ol"/>
-                                <exclude reference="Iqf-ZH-JPv"/>
-                                <exclude reference="05P-TQ-PMy"/>
-                                <exclude reference="WaN-cT-GyE"/>
-                                <exclude reference="3dN-pF-0ef"/>
-                                <exclude reference="M2c-tr-Xwh"/>
-                                <exclude reference="Blt-fX-lJz"/>
-                                <exclude reference="Kjn-CW-sM4"/>
-                                <exclude reference="vip-2h-XV6"/>
-                                <exclude reference="5Pa-zC-9gl"/>
-                                <exclude reference="HCF-VW-I8a"/>
-                                <exclude reference="M4G-r3-Ucv"/>
-                                <exclude reference="jM0-10-OEB"/>
-                                <exclude reference="bhV-7L-bRG"/>
-                                <exclude reference="Us1-bQ-Y93"/>
-                                <exclude reference="HRm-Dp-lHd"/>
-                                <exclude reference="Svh-Ca-3jC"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="7sJ-qm-cxv"/>
                                 <exclude reference="wD9-1d-yXH"/>

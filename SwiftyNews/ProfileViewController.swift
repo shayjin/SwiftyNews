@@ -71,6 +71,7 @@ class ProfileViewController: UIViewController {
             enable(page: "login")
             self.loginUsernameTextField.text = ""
             self.loginPasswordTextField.text = ""
+            self.loginPasswordTextField.isSecureTextEntry = true
         }
     }
     
