@@ -531,6 +531,12 @@
                                     <constraint firstAttribute="trailing" secondItem="0Mq-kD-yMf" secondAttribute="trailing" id="yOG-QJ-evP"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading articles..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZC-dd-Sx1">
+                                <rect key="frame" x="128" y="391" width="134.33333333333337" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -542,8 +548,10 @@
                             <constraint firstItem="Por-Kc-9kK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DQS-Ik-FlJ"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GYr-4l-STv"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="20" id="Jyg-Us-Aaj"/>
+                            <constraint firstItem="NZC-dd-Sx1" firstAttribute="centerX" secondItem="dPe-LZ-AXc" secondAttribute="centerX" id="MJu-5v-gNS"/>
                             <constraint firstItem="dPe-LZ-AXc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OJy-FF-xvW"/>
                             <constraint firstItem="Blp-4p-nnt" firstAttribute="top" secondItem="Por-Kc-9kK" secondAttribute="bottom" constant="52" id="OMm-wX-kYu"/>
+                            <constraint firstItem="NZC-dd-Sx1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="b8n-fp-Kw9"/>
                             <constraint firstItem="Blp-4p-nnt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wj0-Ed-UTj"/>
                         </constraints>
                     </view>
@@ -556,6 +564,7 @@
                         <outlet property="button3" destination="V1m-rh-Ndu" id="cq1-1F-rvE"/>
                         <outlet property="button4" destination="GPL-ns-wmL" id="74v-ho-vY0"/>
                         <outlet property="button5" destination="0As-FN-Bgg" id="gpY-te-Jju"/>
+                        <outlet property="loadingLabel" destination="NZC-dd-Sx1" id="jNc-a4-M2j"/>
                         <outlet property="newsType" destination="dPe-LZ-AXc" id="dF3-26-aPs"/>
                         <outlet property="picture1" destination="AA2-d4-LXG" id="xz0-yD-2uO"/>
                         <outlet property="picture2" destination="8zZ-C6-cWH" id="1eB-jo-ATb"/>

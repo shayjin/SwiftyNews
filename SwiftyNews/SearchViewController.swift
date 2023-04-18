@@ -152,6 +152,7 @@ class SearchViewController: UIViewController {
             imageView.layer.masksToBounds = true
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
+        textField.resignFirstResponder()
     }
     
 

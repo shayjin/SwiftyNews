@@ -31,19 +31,20 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var button5: UIButton!
     @IBOutlet var picture5: UIImageView!
     @IBOutlet var title5: UILabel!
-    let label = UILabel()
+
+    @IBOutlet var loadingLabel: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
+        loading(label: loadingLabel)
         hideComponents()
-        loading(label: label)
         super.viewDidAppear(animated)
 
         self.newsType.accessibilityIdentifier = "newsType"
 
         if localNews.count <= 0 {
             getUserLocation()
-            parseLocalAndUSNews("top-headlines?country=us")
-            parseWorldNews()
+            //parseLocalAndUSNews("top-headlines?country=us")
+                // parseWorldNews()
         } else {
             switchNewsType((Any).self)
         }
@@ -305,7 +306,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
             (UIComponnents[i][1] as! UILabel).text = articleList[i].title as! String
         }
         
-        remove(label: label)
+        remove(label: loadingLabel)
     }
     
     func convertStateName(_ state: String) -> String {
