@@ -68,15 +68,17 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="cWJ-7w-9IB"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-JV-gra">
-                                <rect key="frame" x="51" y="211" width="277" height="160"/>
+                                <rect key="frame" x="50" y="211" width="275" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="M6q-AV-vM1"/>
-                                    <constraint firstAttribute="width" constant="277" id="mE7-b0-kJf"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWH-q8-pL7">
-                                <rect key="frame" x="51" y="379" width="120" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWH-q8-pL7">
+                                <rect key="frame" x="50" y="379" width="130" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Xgh-XA-qfr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="fD2-g0-aJ2"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Like"/>
                                 <connections>
@@ -84,9 +86,11 @@
                                     <segue destination="zSA-di-Jmq" kind="show" id="IEv-sB-rI2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpj-nn-I9Z">
-                                <rect key="frame" x="204" y="379" width="126" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpj-nn-I9Z">
+                                <rect key="frame" x="193.66666666666663" y="379" width="130" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="8QF-IM-olZ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Read Original"/>
                                 <connections>
@@ -100,15 +104,21 @@
                             <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="GLM-Uk-ZmU" secondAttribute="trailing" constant="20" id="34r-lh-zLD"/>
                             <constraint firstItem="QCK-8A-A7y" firstAttribute="top" secondItem="U4D-eo-QYc" secondAttribute="top" id="4Bx-Tp-0wu"/>
                             <constraint firstItem="GLM-Uk-ZmU" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="20" id="Epb-Ya-gnj"/>
+                            <constraint firstItem="QWH-q8-pL7" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="50" id="FXK-EN-1Px"/>
+                            <constraint firstItem="wpj-nn-I9Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QWH-q8-pL7" secondAttribute="trailing" constant="8" symbolic="YES" id="K3P-vE-PRd"/>
+                            <constraint firstItem="QWH-q8-pL7" firstAttribute="baseline" secondItem="wpj-nn-I9Z" secondAttribute="baseline" id="NRw-2c-chh"/>
                             <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="QCK-8A-A7y" secondAttribute="trailing" constant="16" id="PCL-UK-Kht"/>
+                            <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="Lgg-JV-gra" secondAttribute="trailing" constant="50" id="RgG-cE-cTj"/>
                             <constraint firstItem="VvE-mF-S0I" firstAttribute="trailing" secondItem="LoK-7x-FWp" secondAttribute="trailingMargin" id="Upd-NY-tSZ"/>
                             <constraint firstItem="Lgg-JV-gra" firstAttribute="top" secondItem="QCK-8A-A7y" secondAttribute="bottom" constant="20" id="Zjj-zv-RbI"/>
                             <constraint firstItem="QCK-8A-A7y" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="20" id="bJq-hx-iF8"/>
                             <constraint firstItem="GLM-Uk-ZmU" firstAttribute="top" secondItem="QCK-8A-A7y" secondAttribute="bottom" constant="-3" id="dfN-hi-u3n"/>
+                            <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="wpj-nn-I9Z" secondAttribute="trailing" constant="51.333333333333485" id="fjh-nF-9MK"/>
                             <constraint firstItem="VvE-mF-S0I" firstAttribute="top" secondItem="Lgg-JV-gra" secondAttribute="bottom" constant="50" id="gHG-eN-kUs"/>
-                            <constraint firstItem="U4D-eo-QYc" firstAttribute="trailing" secondItem="Lgg-JV-gra" secondAttribute="trailing" constant="46.999999999999943" id="jwn-7a-sVw"/>
+                            <constraint firstItem="Lgg-JV-gra" firstAttribute="leading" secondItem="U4D-eo-QYc" secondAttribute="leading" constant="50" id="iVs-l7-omB"/>
                             <constraint firstAttribute="bottomMargin" secondItem="VvE-mF-S0I" secondAttribute="bottom" constant="-52" id="mY3-mU-H2l"/>
                             <constraint firstItem="VvE-mF-S0I" firstAttribute="leading" secondItem="GLM-Uk-ZmU" secondAttribute="leading" id="uL9-nk-T8H"/>
+                            <constraint firstItem="VvE-mF-S0I" firstAttribute="top" secondItem="QWH-q8-pL7" secondAttribute="bottom" constant="7" id="yEK-fe-3Qu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mgK-e0-1Fc"/>
@@ -125,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IU-JD-3no" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3569" y="1428"/>
+            <point key="canvasLocation" x="-3570.4000000000001" y="1427.5862068965519"/>
         </scene>
         <!--HomeController-->
         <scene sceneID="tne-QT-ifu">
@@ -1180,7 +1190,7 @@
             <objects>
                 <viewController storyboardIdentifier="profile" title="ProfileController" id="zSA-di-Jmq" customClass="ProfileViewController" customModule="SwiftyNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z8a-lW-UyL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1y-Fw-9Ol">
@@ -1236,38 +1246,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-MJ-I9a">
-                                <rect key="frame" x="120" y="47" width="135" height="35"/>
+                                <rect key="frame" x="120" y="91" width="135" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="status"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
-                                <rect key="frame" x="25" y="43" width="72.666666666666671" height="28.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-zC-9gl">
+                                <rect key="frame" x="25" y="134" width="72.666666666666671" height="28.333333333333343"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
-                                <rect key="frame" x="25" y="81.333333333333329" width="325" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCF-VW-I8a">
+                                <rect key="frame" x="25" y="172.33333333333334" width="325" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
-                                <rect key="frame" x="25" y="145.33333333333331" width="67.333333333333329" height="28.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4G-r3-Ucv">
+                                <rect key="frame" x="25" y="236.33333333333334" width="67.333333333333329" height="28.333333333333343"/>
                                 <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
-                                <rect key="frame" x="25" y="183.66666666666666" width="325" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jM0-10-OEB">
+                                <rect key="frame" x="25" y="274.66666666666669" width="325" height="18.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
-                                <rect key="frame" x="25" y="257.66666666666669" width="325" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-7L-bRG">
+                                <rect key="frame" x="25" y="333" width="325" height="35"/>
                                 <accessibility key="accessibilityConfiguration" identifier="login"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
@@ -1276,7 +1286,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-bQ-Y93">
-                                <rect key="frame" x="25" y="308" width="150" height="113"/>
+                                <rect key="frame" x="25" y="391" width="150" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="zUi-V4-hMM"/>
                                 </constraints>
@@ -1287,7 +1297,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRm-Dp-lHd">
-                                <rect key="frame" x="215" y="346.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="215" y="320.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="VkN-yg-vmf"/>
                                 </constraints>
@@ -1511,7 +1521,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OUu-Pa-P4f"/>
+        <segue reference="IEv-sB-rI2"/>
         <segue reference="SMW-iB-5OC"/>
     </inferredMetricsTieBreakers>
     <resources>
