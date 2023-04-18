@@ -8,7 +8,7 @@ import Alamofire
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
     let auth = Auth.auth()
     let database = Database.database().reference()
-    let apiKey = "0dd9c3c831984749a94dd23576d012c8"
+    let apiKey = "dae337b887dd49faaa30b9d48d41adea"
     
     var userLocation: String? = nil
     var localNews = [News]()
@@ -44,8 +44,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
 
         if localNews.count <= 0 {
             getUserLocation()
-                //parseLocalAndUSNews("top-headlines?country=us")
-                // parseWorldNews()
+            parseLocalAndUSNews("top-headlines?country=us")
+            parseWorldNews()
         } else {
             switchNewsType((Any).self)
         }
@@ -68,7 +68,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func loading(label: UILabel) {
-        label.text = "Getting articles..."
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
@@ -378,7 +377,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         var selectedCountries: [String] = []
 
         for i in 1...5 {
-            let randomIndex = Int.random(in: 0..<countries.count)
+            let randomIndex = Int.random(in: 0..<countries.count-1)
             selectedCountries.append(countries[randomIndex])
         }
         

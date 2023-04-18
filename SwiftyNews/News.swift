@@ -24,7 +24,7 @@ class News {
         self.url = url
         self.originalText? = text
         self.simplifiedText = []
-        //simplify(url: url as! String)
+        simplify(url: url as! String)
         
     }
     
