@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
     @IBOutlet var button5: UIButton!
     @IBOutlet var title5: UILabel!
     
-    var apiKey = "dae337b887dd49faaa30b9d48d41adea"
+    var apiKey = "NewsAPI-key-here"
     
     var searchedNews = [News]()
     

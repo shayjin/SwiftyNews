@@ -13,7 +13,7 @@ class News {
     
     let headers: HTTPHeaders = [
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer OpenAI-API-key-here"
     ]
     
     init(title: Any, imageUrl: String, author: Any, date: Any, text: Any, url: String) {
@@ -24,7 +24,7 @@ class News {
         self.url = url
         self.originalText? = text
         self.simplifiedText = []
-        //simplify(url: url as! String)
+        simplify(url: url as! String)
     }
     
     init() {
